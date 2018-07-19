@@ -1,7 +1,7 @@
 const invert = require('./index');
 
 module.exports = {
-  'should invert truthy to false': [
+  'invert truthy': [
     false,
     () => invert(true),
     () => invert(1),
@@ -10,7 +10,7 @@ module.exports = {
     () => invert(() => {}),
     () => invert({}),
   ],
-  'should invert falsey to true': [
+  'invert falsey': [
     true,
     () => invert(false),
     () => invert(),

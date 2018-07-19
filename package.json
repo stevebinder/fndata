@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "npm run clean && NODE_ENV=production webpack -p --progress --colors --sort-modules-by size",
-    "test": "node test",
+    "test": "node test"
   },
   "engines": {
     "node": "8.3.0",

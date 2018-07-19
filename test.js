@@ -1,40 +1,43 @@
-const append = require('./append/tests');
-const attempt = require('./attempt/tests');
-const copy = require('./copy/tests');
-const entries = require('./entries/tests');
-const fill = require('./fill/tests');
-const filter = require('./filter/tests');
-const get = require('./get/tests');
-const includes = require('./includes/tests');
-const invert = require('./invert/tests');
-const isArray = require('./isArray/tests');
-const isElement = require('./isElement/tests');
-const isEmpty = require('./isEmpty/tests');
-const isEqual = require('./isEqual/tests');
-const isFunction = require('./isFunction/tests');
-const isInfinity = require('./isInfinity/tests');
-const isNan = require('./isNan/tests');
-const isNumber = require('./isNumber/tests');
-const isNull = require('./isNull/tests');
-const isObject = require('./isObject/tests');
-const isShape = require('./isShape/tests');
-const isString = require('./isString/tests');
-const isUndefined = require('./isUndefined/tests');
-const join = require('./join/tests');
-const loop = require('./loop/tests');
-const map = require('./map/tests');
-const memo = require('./memo/tests');
-const noop = require('./noop/tests');
-const prepend = require('./prepend/tests');
-const reduce = require('./reduce/tests');
-const reject = require('./reject/tests');
-const remove = require('./remove/tests');
-const reverse = require('./reverse/tests');
-const set = require('./set/tests');
-const sum = require('./sum/tests');
-const swap = require('./swap/tests');
-const toNumber = require('./toNumber/tests');
-const toString = require('./toString/tests');
+const append = require('./src/append/tests');
+const attempt = require('./src/attempt/tests');
+const copy = require('./src/copy/tests');
+const entries = require('./src/entries/tests');
+const fill = require('./src/fill/tests');
+const filter = require('./src/filter/tests');
+const get = require('./src/get/tests');
+const id = require('./src/id/tests');
+const includes = require('./src/includes/tests');
+const invert = require('./src/invert/tests');
+const isArray = require('./src/isArray/tests');
+const isElement = require('./src/isElement/tests');
+const isEmpty = require('./src/isEmpty/tests');
+const isEqual = require('./src/isEqual/tests');
+const isFunction = require('./src/isFunction/tests');
+const isInfinity = require('./src/isInfinity/tests');
+const isNan = require('./src/isNan/tests');
+const isNumber = require('./src/isNumber/tests');
+const isNull = require('./src/isNull/tests');
+const isObject = require('./src/isObject/tests');
+const isShape = require('./src/isShape/tests');
+const isString = require('./src/isString/tests');
+const isUndefined = require('./src/isUndefined/tests');
+const join = require('./src/join/tests');
+const loop = require('./src/loop/tests');
+const map = require('./src/map/tests');
+const memo = require('./src/memo/tests');
+const move = require('./src/move/tests');
+const noop = require('./src/noop/tests');
+const prepend = require('./src/prepend/tests');
+const reduce = require('./src/reduce/tests');
+const reject = require('./src/reject/tests');
+const remove = require('./src/remove/tests');
+const reverse = require('./src/reverse/tests');
+const set = require('./src/set/tests');
+const sum = require('./src/sum/tests');
+const swap = require('./src/swap/tests');
+const toBoolean = require('./src/toBoolean/tests');
+const toNumber = require('./src/toNumber/tests');
+const toString = require('./src/toString/tests');
 
 const tests = {
   append,
@@ -44,6 +47,7 @@ const tests = {
   fill,
   filter,
   get,
+  id,
   includes,
   invert,
   isArray,
@@ -62,6 +66,7 @@ const tests = {
   loop,
   map,
   memo,
+  move,
   noop,
   prepend,
   reduce,
@@ -71,6 +76,7 @@ const tests = {
   set,
   sum,
   swap,
+  toBoolean,
   toNumber,
   toString,
 };
