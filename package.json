@@ -1,5 +1,6 @@
 {
   "name": "fndata",
+  "description": "Functional functions for manipulating data.",
   "version": "0.0.1",
   "files": [
     "dist"
