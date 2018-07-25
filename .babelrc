@@ -1,11 +1,6 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "chrome": 52,
-        "uglify": true,
-      },
-    }],
+    "env",
     "stage-2"
-  ]
+  ],
 }
