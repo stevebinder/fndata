@@ -90,23 +90,25 @@ for (const i in tests) {
     const testFunction = i;
     const testTitle = j;
     const testGoal = JSON.stringify(tests[i][j][0]);
-    const testMethods = [...tests[i][j] ];
+    const testMethods = [...tests[i][j]];
     testMethods.shift();
     testMethods.forEach((method) => {
+      const error = {
+        description: testTitle,
+        name: testFunction,
+      }
       try {
         const result = JSON.stringify(method());
         if (result !== testGoal) {
           errors.push({
+            ...error,
             body: `expected ${testGoal} but got ${result}`,
-            description: testTitle,
-            name: testFunction,
           });
         }
       } catch (e) {
         errors.push({
+          ...error,
           body: e.message,
-          description: testTitle,
-          name: testFunction,
         });
       }
     });
@@ -118,5 +120,5 @@ if (errors.length) {
 } else {
   console.log(`SUCCESS passed all ${total} tests`);
 }
-errors.forEach(({ body, description, name }) =>
-  console.log(`FAILED(${name}: ${description})${body && ' '}${body}`));
+errors.forEach(({ body, description, index, name }) =>
+  console.log(`FAILED(${name} - ${description})${body && ' '}${body}`));

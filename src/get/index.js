@@ -1,5 +1,6 @@
 const filter = require('../filter');
 const isArray = require('../isArray');
+const isEmpty = require('../isEmpty');
 const isFunction = require('../isFunction');
 const isNumber = require('../isNumber');
 const isString = require('../isString');
@@ -7,6 +8,9 @@ const toNumber = require('../toNumber');
 const toString = require('../toString');
 
 module.exports = (target, locator) => {
+  if (isEmpty(target)) {
+    return undefined;
+  }
   if (isString(target)) {
     return target[locator];
   }
@@ -18,7 +22,7 @@ module.exports = (target, locator) => {
   }
   const keys = (() => {
     if (isString(locator)) {
-      return locator.split('.');
+      return locator.match(/[^\{\[\]\.]+/g) || [];
     }
     if (isArray(locator)) {
       return locator;

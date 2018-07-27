@@ -5,7 +5,15 @@ module.exports = {
     undefined,
     () => set(),
   ],
-  'set a string within a string using a value to compare': [
+  'set a value where nothing exists using string keys': [
+    { a: { b: 1 } },
+    () => set(undefined, ['a', 'b'], 1),
+  ],
+  'set a value where nothing exists using number keys': [
+    { a: { b: [ { c: 1 } ] } },
+    () => set(undefined, ['a', 'b', 0, 'c'], 1),
+  ],
+  'string within a string using a value to compare': [
     'cat',
     () => set(
       'car',
@@ -13,7 +21,15 @@ module.exports = {
       't',
     ),
   ],
-  'set multiple values within a string using a function to compare values': [
+  'string within a string using an index to compare': [
+    'cat',
+    () => set(
+      'car',
+      2,
+      't',
+    ),
+  ],
+  'string within a string using a function to compare values': [
     'aaa',
     () => set(
       'abc',
@@ -21,12 +37,32 @@ module.exports = {
       'a',
     ),
   ],
-  'set multiple values within a string using a function to compare indexes': [
+  'string within a string using a function to compare indexes': [
     'aaa',
     () => set(
       'abc',
       (item, index) => index > 0,
       'a',
+    ),
+  ],
+  'number within a number using a value to compare': [
+    1233,
+    () => set(1244, 4, 3),
+  ],
+  'number within a number using a function to compare values': [
+    111,
+    () => set(
+      122,
+      item => item !== 1,
+      1,
+    ),
+  ],
+  'number within a number using a function to compare indexes': [
+    211,
+    () => set(
+      222,
+      (item, index) => index > 0,
+      1,
     ),
   ],
   'set a value within an array using an index': [
@@ -43,14 +79,6 @@ module.exports = {
       'car',
       2,
       't',
-    ),
-  ],
-  'set a value within a number using an index': [
-    124,
-    () => set(
-      123,
-      2,
-      4,
     ),
   ],
   'set values using a setter function that uses the value': [
@@ -77,46 +105,46 @@ module.exports = {
       2,
     ),
   ],
-  'set an object key to value using a string path': [
-    { a: { b: { c: 2 } } },
-    () => set(
-      { a: { b: { c: 1 } } },
-      'a.b.c',
-      2,
-    ),
-  ],
-  'set an object key to value using a string path and a setter function': [
-    { a: { b: { c: 2 } } },
-    () => set(
-      { a: { b: { c: 1 } } },
-      'a.b.c',
-      item => item * 2,
-    ),
-  ],
-  'set an object key that does not exist to value using a string path': [
-    { a: { b: { c: 1 } } },
-    () => set(
-      {},
-      'a.b.c',
-      1,
-    ),
-    () => set(
-      { a: 1 },
-      'a.b.c',
-      1,
-    ),
-    () => set(
-      { a: { b: {} } },
-      'a.b.c',
-      1,
-    ),
-  ],
-  'set a deep path using arrays and indexes': [
-    [{ a: { b: 2 } }],
-    () => set(
-      [{ a: { b: 1 } }],
-      [0, 'a', 'b'],
-      2,
-    ),
-  ],
+  // 'set an object key to value using a string path': [
+  //   { a: { b: { c: 2 } } },
+  //   () => set(
+  //     { a: { b: { c: 1 } } },
+  //     'a.b.c',
+  //     2,
+  //   ),
+  // ],
+  // 'set an object key to value using a string path and a setter function': [
+  //   { a: { b: { c: 2 } } },
+  //   () => set(
+  //     { a: { b: { c: 1 } } },
+  //     'a.b.c',
+  //     item => item * 2,
+  //   ),
+  // ],
+  // 'set an object key that does not exist to value using a string path': [
+  //   { a: { b: { c: 1 } } },
+  //   () => set(
+  //     {},
+  //     'a.b.c',
+  //     1,
+  //   ),
+  //   () => set(
+  //     { a: 1 },
+  //     'a.b.c',
+  //     1,
+  //   ),
+  //   () => set(
+  //     { a: { b: {} } },
+  //     'a.b.c',
+  //     1,
+  //   ),
+  // ],
+  // 'set a deep path using arrays and indexes': [
+  //   [{ a: { b: 2 } }],
+  //   () => set(
+  //     [{ a: { b: 1 } }],
+  //     [0, 'a', 'b'],
+  //     2,
+  //   ),
+  // ],
 };

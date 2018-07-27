@@ -1,3 +1,5 @@
+const id = require('./');
+
 module.exports = {
   'should return a string': [
     true,

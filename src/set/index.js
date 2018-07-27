@@ -10,7 +10,15 @@ const isObject = require('../isObject');
 const toNumber = require('../toNumber');
 const toString = require('../toString');
 
-function setObject(target, path, setter) {
+const setArray = (target, comparer, setter) => {
+  return target.map((item, index) =>
+    comparer(item, index, target)
+      ? setter(item, index, target)
+      : item,
+  );
+};
+
+const setArrayOrObject = (target, path, setter) => {
   const keys = (() => {
     if (isString(path)) {
       return path.split('.');
@@ -20,32 +28,26 @@ function setObject(target, path, setter) {
     }
     return [path];
   })();
-  const dup = { ...target };
+  const getBase = key => isNumber(key) ? [] : {};
+  const dup = target ? target : getBase(keys[0]);
   let ref = dup;
   keys.forEach((key, index) => {
     if (isEmpty(ref[key])) {
-      ref[key] = {};
+      ref[key] = getBase(key);
     }
     if (index === keys.length - 1) {
-      ref[key] = setter(get(target, path));
+      ref[key] = "BLAST";//setter(get(target, path));
     } else {
-      ref = { ...ref[key] };
+      ref = isNumber(key)
+        ? [ ...ref[key] ]
+        : { ...ref[key] };
     }
-    //console.log(key, JSON.stringify(ref), JSON.stringify(dup));
   });
   return dup;
-}
+};
 
-function setArray(target, comparer, setter) {
-  return target.map((item, index) =>
-    comparer(item, index, target)
-      ? setter(item, index, target)
-      : item,
-  );
-}
-
-function setNumber(target, comparer, setter) {
-  return toNumber(
+const setNumber = (target, comparer, setter) =>
+  toNumber(
     toString(target)
       .split('')
       .map((item, index) =>
@@ -55,10 +57,9 @@ function setNumber(target, comparer, setter) {
       )
       .join(''),
   );
-}
 
-function setString(target, comparer, setter) {
-  return target
+const setString = (target, comparer, setter) =>
+  target
     .split('')
     .map((item, index) =>
       comparer(item, index, target)
@@ -66,23 +67,23 @@ function setString(target, comparer, setter) {
         : item
     )
     .join('');
-}
 
 module.exports = (target, comparer, setter) => {
-  if (isEmpty(target)) {
-    return target;
-  }
   const setterFn = isFunction(setter)
     ? setter
     : () => setter;
-  if (isObject(target)) {
-    return setObject(target, comparer, setterFn);
+  if (
+    isEmpty(target)
+    || isObject(target)
+    || (isArray(target) && !isNumber(setter))
+  ) {
+    return setArrayOrObject(target, comparer, setterFn);
   }
   const comparerFn = (() => {
     if (isFunction(comparer)) {
       return comparer;
     }
-    if (isNumber(comparer)) {
+    if (isNumber(comparer) && !isNumber(target)) {
       return (item, index) => index === comparer;
     }
     return item => item === comparer;
@@ -92,9 +93,6 @@ module.exports = (target, comparer, setter) => {
   }
   if (isNumber(target)) {
     return setNumber(target, comparerFn, setterFn);
-  }
-  if (isArray(target)) {
-    return setArray(target, comparerFn, setterFn);
   }
   return target;
 };
