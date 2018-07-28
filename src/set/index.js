@@ -1,5 +1,4 @@
 const copy = require('../copy');
-const get = require('../get');
 const isArray = require('../isArray');
 const isEmpty = require('../isEmpty');
 const isFunction = require('../isFunction');
@@ -7,43 +6,62 @@ const isNumber = require('../isNumber');
 const isShape = require('../isShape');
 const isString = require('../isString');
 const isObject = require('../isObject');
+const isUndefined = require('../isUndefined');
 const toNumber = require('../toNumber');
 const toString = require('../toString');
 
-const setArray = (target, comparer, setter) => {
-  return target.map((item, index) =>
-    comparer(item, index, target)
-      ? setter(item, index, target)
-      : item,
-  );
+const getBase = (key, pointer) => {
+  if (isNumber(key)) {
+    if (isArray(pointer)) {
+      return [...pointer];
+    }
+    return [];
+  }
+  if (isObject(pointer)) {
+    return { ...pointer };
+  }
+  return {};
 };
 
-const setArrayOrObject = (target, path, setter) => {
-  const keys = (() => {
-    if (isString(path)) {
-      return path.split('.');
+const getKeys = value => {
+  const raw = (() => {
+    if (isString(value)) {
+      return value.match(/[^\{\[\]\."']+/g) || [];
     }
-    if (isArray(path)) {
-      return path;
+    if (isArray(value)) {
+      return value;
     }
-    return [path];
+    return [value];
   })();
-  const getBase = key => isNumber(key) ? [] : {};
-  const dup = target ? target : getBase(keys[0]);
-  let ref = dup;
-  keys.forEach((key, index) => {
-    if (isEmpty(ref[key])) {
-      ref[key] = getBase(key);
+  return raw.map(item => {
+    const num = item * 1;
+    if (num === 0 || num > 0) {
+      return num;
     }
+    return item;
+  });
+};
+
+const setArray = (target, comparer, setter) =>
+  target.map((item, index) =>
+    comparer(item, index, target)
+      ? setter(item, index, target)
+      : item
+  );
+
+const setArrayOrObject = (target, path, setter) => {
+  const keys = getKeys(path);
+  const result = getBase(keys[0], target);
+  let ref = result;
+  keys.forEach((key, index) => {
     if (index === keys.length - 1) {
-      ref[key] = "BLAST";//setter(get(target, path));
+      ref[key] = setter(ref[key]);
     } else {
-      ref = isNumber(key)
-        ? [ ...ref[key] ]
-        : { ...ref[key] };
+      ref[key] = getBase(keys[index + 1], ref[key]);
+      ref = ref[key];
     }
   });
-  return dup;
+  return result;
 };
 
 const setNumber = (target, comparer, setter) =>
@@ -69,13 +87,16 @@ const setString = (target, comparer, setter) =>
     .join('');
 
 module.exports = (target, comparer, setter) => {
+  if (isUndefined(comparer) && isUndefined(setter)) {
+    return target;
+  }
   const setterFn = isFunction(setter)
     ? setter
     : () => setter;
   if (
     isEmpty(target)
     || isObject(target)
-    || (isArray(target) && !isNumber(setter))
+    || (isArray(target) && (isString(comparer) || isArray(comparer)))
   ) {
     return setArrayOrObject(target, comparer, setterFn);
   }
@@ -93,6 +114,9 @@ module.exports = (target, comparer, setter) => {
   }
   if (isNumber(target)) {
     return setNumber(target, comparerFn, setterFn);
+  }
+  if (isArray(target)) {
+    return setArray(target, comparerFn, setterFn);
   }
   return target;
 };

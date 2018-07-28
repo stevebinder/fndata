@@ -1,6 +1,8 @@
 const append = require('../src/append/tests');
 const attempt = require('../src/attempt/tests');
+const compose = require('../src/compose/tests');
 const copy = require('../src/copy/tests');
+const curry = require('../src/curry/tests');
 const entries = require('../src/entries/tests');
 const fill = require('../src/fill/tests');
 const filter = require('../src/filter/tests');
@@ -42,7 +44,9 @@ const toString = require('../src/toString/tests');
 const tests = {
   append,
   attempt,
+  compose,
   copy,
+  curry,
   entries,
   fill,
   filter,

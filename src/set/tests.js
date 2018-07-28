@@ -1,19 +1,11 @@
 const set = require('./index');
 
 module.exports = {
-  'set nothing': [
+  'do nothing': [
     undefined,
     () => set(),
   ],
-  'set a value where nothing exists using string keys': [
-    { a: { b: 1 } },
-    () => set(undefined, ['a', 'b'], 1),
-  ],
-  'set a value where nothing exists using number keys': [
-    { a: { b: [ { c: 1 } ] } },
-    () => set(undefined, ['a', 'b', 0, 'c'], 1),
-  ],
-  'string within a string using a value to compare': [
+  'string within a string by value': [
     'cat',
     () => set(
       'car',
@@ -21,7 +13,7 @@ module.exports = {
       't',
     ),
   ],
-  'string within a string using an index to compare': [
+  'string within a string by index': [
     'cat',
     () => set(
       'car',
@@ -29,122 +21,161 @@ module.exports = {
       't',
     ),
   ],
-  'string within a string using a function to compare values': [
+  'string within a string by function': [
     'aaa',
     () => set(
       'abc',
       item => item !== 'a',
       'a',
     ),
-  ],
-  'string within a string using a function to compare indexes': [
-    'aaa',
     () => set(
       'abc',
       (item, index) => index > 0,
       'a',
     ),
   ],
-  'number within a number using a value to compare': [
+  'number within a number by value': [
     1233,
     () => set(1244, 4, 3),
   ],
-  'number within a number using a function to compare values': [
+  'number within a number by function': [
     111,
     () => set(
       122,
       item => item !== 1,
       1,
     ),
-  ],
-  'number within a number using a function to compare indexes': [
-    211,
     () => set(
-      222,
+      122,
       (item, index) => index > 0,
       1,
     ),
   ],
-  'set a value within an array using an index': [
-    [1, 2, 4],
+  'value within an array by index': [
+    [1, 2, 3],
     () => set(
-      [1, 2, 3],
+      [1, 2, 4],
       2,
-      4,
+      3,
     ),
   ],
-  'set a value within a string using an index': [
-    'cat',
+  'set a value within an array using a value': [
+    [null, 1, 1],
     () => set(
-      'car',
-      2,
-      't',
+      [null, undefined, undefined],
+      undefined,
+      1,
     ),
   ],
-  'set values using a setter function that uses the value': [
-    [2, 4, 6],
-    () => set(
-      [1, 2, 3],
-      () => true,
-      item => item * 2,
-    ),
-  ],
-  'set values using a setter function that uses the index': [
-    [0, 1, 2],
-    () => set(
-      [1, 1, 1],
-      () => true,
-      (item, index) => index,
-    ),
-  ],
-  'set an object key to value using array of keys': [
+  'existing object path using value': [
     { a: { b: { c: 2 } } },
     () => set(
       { a: { b: { c: 1 } } },
       ['a', 'b', 'c'],
       2,
     ),
+    () => set(
+      { a: { b: { c: 1 } } },
+      'a.b.c',
+      2,
+    ),
+    () => set(
+      { a: { b: { c: 1 } } },
+      '[\'a\'].b.c',
+      2,
+    ),
+    () => set(
+      { a: { b: { c: 1 } } },
+      '["a"]["b"]["c"]',
+      2,
+    ),
   ],
-  // 'set an object key to value using a string path': [
-  //   { a: { b: { c: 2 } } },
-  //   () => set(
-  //     { a: { b: { c: 1 } } },
-  //     'a.b.c',
-  //     2,
-  //   ),
-  // ],
-  // 'set an object key to value using a string path and a setter function': [
-  //   { a: { b: { c: 2 } } },
-  //   () => set(
-  //     { a: { b: { c: 1 } } },
-  //     'a.b.c',
-  //     item => item * 2,
-  //   ),
-  // ],
-  // 'set an object key that does not exist to value using a string path': [
-  //   { a: { b: { c: 1 } } },
-  //   () => set(
-  //     {},
-  //     'a.b.c',
-  //     1,
-  //   ),
-  //   () => set(
-  //     { a: 1 },
-  //     'a.b.c',
-  //     1,
-  //   ),
-  //   () => set(
-  //     { a: { b: {} } },
-  //     'a.b.c',
-  //     1,
-  //   ),
-  // ],
-  // 'set a deep path using arrays and indexes': [
-  //   [{ a: { b: 2 } }],
-  //   () => set(
-  //     [{ a: { b: 1 } }],
-  //     [0, 'a', 'b'],
-  //     2,
-  //   ),
-  // ],
+  'existing object path using function': [
+    { a: { b: { c: 2 } } },
+    () => set(
+      { a: { b: { c: 1 } } },
+      ['a', 'b', 'c'],
+      value => value * 2,
+    ),
+  ],
+  'existing array path': [
+    [1, 2, 3, [1]],
+    () => set(
+      [1, 2, 4, [1]],
+      [2],
+      3,
+    ),
+    () => set(
+      [1, 2, 3, [2]],
+      [3, 0],
+      1,
+    ),
+    () => set(
+      [1, 2, 3, [2]],
+      '[3][0]',
+      1,
+    ),
+  ],
+  'complex path': [
+    [
+      1,
+      2,
+      {
+        a: [
+          { b: 1, c: 2 },
+          3,
+        ],
+      },
+      4,
+    ],
+    () => set(
+      [
+        1,
+        2,
+        {
+          a: [
+            { b: 1, c: 1 },
+            3,
+          ],
+        },
+        4,
+      ],
+      [2, 'a', 0, 'c'],
+      2,
+    ),
+  ],
+  'non-existant object-only path': [
+    { a: { b: { c: 1 } } },
+    () => set(
+      { a: 1 },
+      'a.b.c',
+      1,
+    ),
+  ],
+  'non-existant array-only path': [
+    [1, [1, [1]]],
+    () => set(
+      { a: 1 },
+      [1, 1, 0],
+      1,
+    ),
+    () => set(
+      undefined,
+      [1, 1, 0],
+      1,
+    ),
+  ],
+  'non-existant mixed path': [
+    { a: { b: [1] } },
+    () => set(
+      { a: [] },
+      ['a', 'b', 0],
+      1,
+    ),
+    () => set(
+      undefined,
+      ['a', 'b', 0],
+      1,
+    ),
+  ],
 };

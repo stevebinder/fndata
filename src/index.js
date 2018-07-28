@@ -1,6 +1,8 @@
 export { default as append } from './append';
 export { default as attempt } from './attempt';
+export { default as compose } from './compose';
 export { default as copy } from './copy';
+export { default as curry } from './curry';
 export { default as entries } from './entries';
 export { default as fill } from './fill';
 export { default as filter } from './filter';
