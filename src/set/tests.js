@@ -153,15 +153,15 @@ module.exports = {
     ),
   ],
   'non-existant array-only path': [
-    [1, [1, [1]]],
+    [[[1]]],
     () => set(
       { a: 1 },
-      [1, 1, 0],
+      [0, 0, 0],
       1,
     ),
     () => set(
       undefined,
-      [1, 1, 0],
+      [0, 0, 0],
       1,
     ),
   ],
