@@ -178,4 +178,26 @@ module.exports = {
       1,
     ),
   ],
+  'asdf': [
+    [
+      { name: 'bob', age: 2 },
+      { name: 'sam', age: 3 },
+    ],
+    () => set(
+      [
+        { name: 'bob', age: 1 },
+        { name: 'sam', age: 3 },
+      ],
+      { age: 1 },
+      item => ({ ...item, age: 2 }),
+    ),
+    () => set(
+      [
+        { name: 'bob', age: 1 },
+        { name: 'sam', age: 3 },
+      ],
+      { age: 1 },
+      { name: 'bob', age: 2 },
+    ),
+  ],
 };

@@ -1,6 +1,10 @@
 const reduce = require('./index');
 
 module.exports = {
+  'return initial value if no reducer': [
+    1,
+    () => reduce('abc', 1),
+  ],
   'reduce a number': [
     6,
     () => reduce(
@@ -43,6 +47,14 @@ module.exports = {
       [true, true, true],
       (result, item, index) => result + index,
       0,
+    ),
+  ],
+  'use swapped arguments': [
+    6,
+    () => reduce(
+      [1, 2, 3],
+      0,
+      (result, item) => result + item,
     ),
   ],
 };

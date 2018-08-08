@@ -49,7 +49,7 @@ const setArray = (target, comparer, setter) =>
       : item
   );
 
-const setArrayOrObject = (target, path, setter) => {
+const setArrayOrObjectWithPath = (target, path, setter) => {
   const keys = getKeys(path);
   const result = getBase(keys[0], target);
   let ref = result;
@@ -94,15 +94,18 @@ module.exports = (target, comparer, setter) => {
     ? setter
     : () => setter;
   if (
-    isEmpty(target)
-    || isObject(target)
-    || (isArray(target) && (isString(comparer) || isArray(comparer)))
+    (isString(comparer) || isArray(comparer))
+    &&
+    (isEmpty(target) || isObject(target) || isArray(target))
   ) {
-    return setArrayOrObject(target, comparer, setterFn);
+    return setArrayOrObjectWithPath(target, comparer, setterFn);
   }
   const comparerFn = (() => {
     if (isFunction(comparer)) {
       return comparer;
+    }
+    if (isObject(comparer)) {
+      return item => isShape(item, comparer);
     }
     if (isNumber(comparer) && !isNumber(target)) {
       return (item, index) => index === comparer;

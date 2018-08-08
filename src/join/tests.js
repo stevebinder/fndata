@@ -1,12 +1,12 @@
 const join = require('./index');
 
 module.exports = {
-  'concat strings': [
+  'strings': [
     'abc',
-    () => join('a', 'b', 'c'),
+    () => join(['a', 'b', 'c']),
   ],
-  'join different values': [
-    'a10{"name":"sam"}[1,2,3]',
+  'mixed values': [
+    'a10{"name":"sam"}123',
     () => join(
       'a',
       1,
@@ -17,9 +17,5 @@ module.exports = {
       { name: 'sam' },
       [1, 2, 3],
     ),
-  ],
-  'join arrays': [
-    [1, 2, 3, 4, null, undefined, true, false],
-    () => join([1, 2], [3, 4], null, undefined, true, false),
   ],
 };
