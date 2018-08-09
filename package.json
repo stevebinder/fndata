@@ -6,7 +6,7 @@
     "babel-preset-stage-2": "^6.24.1"
   },
   "files": [
-    "dist"
+    "dist/"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -16,5 +16,5 @@
     "release": "git push origin master && git pull origin master && npm run test && npm run build && npm publish",
     "test": "node test"
   },
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
