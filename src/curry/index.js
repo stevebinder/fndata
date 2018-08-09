@@ -1,6 +1,19 @@
+const isArray = require('../isArray');
+const isFunction = require('../isFunction');
+
 module.exports = (...args) => {
-  const [target, ...methods] = args;
-  let result = target;
-  methods.forEach(method => result = method(result));
-  return result;
+  const [value, ...items] = args;
+  return items.reduce(
+    (result, item) => {
+      if (isArray(item)) {
+        const [targetMethod, ...targetArgs] = item;
+        return targetMethod(result, ...targetArgs);
+      }
+      if (isFunction(item)) {
+        return item(result);
+      }
+      return item;
+    },
+    value,
+  );
 };

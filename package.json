@@ -19,5 +19,5 @@
     "release": "git push origin master && git pull origin master && npm run test && npm publish",
     "test": "node test"
   },
-  "version": "0.0.5"
+  "version": "0.0.6"
 }
