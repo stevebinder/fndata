@@ -1,16 +1,5 @@
 {
-  "name": "fndata",
-  "description": "Functional functions for manipulating data.",
-  "version": "0.0.2",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/bundle.js",
-  "scripts": {
-    "build": "npm run test && NODE_ENV=production webpack -p",
-    "release": "git push origin master && git pull origin master && npm publish",
-    "test": "node test"
-  },
+  "description": "A library of functional functions for making code more concise and readable.",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -18,5 +7,17 @@
     "babel-preset-stage-2": "^6.24.1",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "main": "dist/bundle.js",
+  "name": "fndata",
+  "scripts": {
+    "build": "npm run test && NODE_ENV=production webpack -p",
+    "release": "git push origin master && git pull origin master && npm run test && npm publish",
+    "test": "node test"
+  },
+  "version": "0.0.5"
 }

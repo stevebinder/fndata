@@ -1,45 +1,49 @@
-export { default as append } from './append';
-export { default as attempt } from './attempt';
-export { default as compose } from './compose';
-export { default as concat } from './concat';
-export { default as copy } from './copy';
-export { default as curry } from './curry';
-export { default as entries } from './entries';
-export { default as fill } from './fill';
-export { default as get } from './get';
-export { default as id } from './id';
-export { default as includes } from './includes';
-export { default as invert } from './invert';
-export { default as isArray } from './isArray';
-export { default as isElement } from './isElement';
-export { default as isEmpty } from './isEmpty';
-export { default as isEqual } from './isEqual';
-export { default as isFunction } from './isFunction';
-export { default as isInfinity } from './isInfinity';
-export { default as isNan } from './isNan';
-export { default as isNumber } from './isNumber';
-export { default as isNull } from './isNull';
-export { default as isObject } from './isObject';
-export { default as isShape } from './isShape';
-export { default as isString } from './isString';
-export { default as isUndefined } from './isUndefined';
-export { default as join } from './join';
-export { default as keep } from './keep';
-export { default as loop } from './loop';
-export { default as map } from './map';
-export { default as memo } from './memo';
-export { default as move } from './move';
-export { default as noop } from './noop';
-export { default as prepend } from './prepend';
-export { default as reduce } from './reduce';
-export { default as reject } from './reject';
-export { default as reverse } from './reverse';
-export { default as set } from './set';
-export { default as some } from './some';
-export { default as sort } from './sort';
-export { default as split } from './split';
-export { default as sum } from './sum';
-export { default as swap } from './swap';
-export { default as toBoolean } from './toBoolean';
-export { default as toNumber } from './toNumber';
-export { default as toString } from './toString';
+module.exports = {
+  all: require('./all'),
+  append: require('./append'),
+  attempt: require('./attempt'),
+  compose: require('./compose'),
+  concat: require('./concat'),
+  copy: require('./copy'),
+  curry: require('./curry'),
+  entries: require('./entries'),
+  fill: require('./fill'),
+  get: require('./get'),
+  id: require('./id'),
+  includes: require('./includes'),
+  invert: require('./invert'),
+  isArray: require('./isArray'),
+  isElement: require('./isElement'),
+  isEmpty: require('./isEmpty'),
+  isEqual: require('./isEqual'),
+  isFunction: require('./isFunction'),
+  isInfinity: require('./isInfinity'),
+  isNan: require('./isNan'),
+  isNumber: require('./isNumber'),
+  isNull: require('./isNull'),
+  isObject: require('./isObject'),
+  isShape: require('./isShape'),
+  isString: require('./isString'),
+  isUndefined: require('./isUndefined'),
+  join: require('./join'),
+  keep: require('./keep'),
+  loop: require('./loop'),
+  map: require('./map'),
+  memo: require('./memo'),
+  move: require('./move'),
+  none: require('./none'),
+  noop: require('./noop'),
+  prepend: require('./prepend'),
+  reduce: require('./reduce'),
+  reject: require('./reject'),
+  reverse: require('./reverse'),
+  set: require('./set'),
+  some: require('./some'),
+  sort: require('./sort'),
+  split: require('./split'),
+  sum: require('./sum'),
+  swap: require('./swap'),
+  toBoolean: require('./toBoolean'),
+  toNumber: require('./toNumber'),
+  toString: require('./toString'),
+};

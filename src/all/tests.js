@@ -1,24 +1,24 @@
-const some = require('./');
+const all = require('./');
 
 module.exports = {
   'array with method that checks the value': [
     true,
-    () => some([0, 1, 2], item => item > 1),
+    () => all([1, 2, 3], item => item > 0),
   ],
   'array with method that checks the index': [
     true,
-    () => some([0, 1, 2], (item, index) => index > 1),
+    () => all([0, 1, 2], (item, index) => index > -1),
   ],
   'array with method that checks the original array': [
     true,
-    () => some([0, 1, 2], (item, index, target) => target.length === 3),
+    () => all([0, 1, 2], (item, index, target) => target.length === 3),
   ],
   'check truthiness of each value': [
     true,
-    () => some(0, 0, null, undefined, 1),
+    () => all(1, true, {}, [], 'a'),
   ],
   'check truthiness of each value': [
     false,
-    () => some(0, 0, null, undefined, NaN),
+    () => all(true, 'a', false),
   ],
 };
