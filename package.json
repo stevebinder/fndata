@@ -13,9 +13,9 @@
   "main": "dist/index.js",
   "name": "fndata",
   "scripts": {
-    "build": "babel src --out-dir dist --ignore tests.js",
+    "build": "rm -rf dist && babel src --out-dir dist --ignore tests.js",
     "release": "git push origin master && git pull origin master && npm run test && npm run build && npm publish",
     "test": "node test"
   },
-  "version": "0.0.10"
+  "version": "0.0.11"
 }
