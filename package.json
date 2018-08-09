@@ -1,7 +1,8 @@
 {
-  "description": "A library of functional functions for making code more concise and readable.",
+  "description": "Functional methods for manipulating data.",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1"
   },
@@ -16,5 +17,5 @@
     "release": "git push origin master && git pull origin master && npm run test && npm run build && npm publish",
     "test": "node test"
   },
-  "version": "0.0.9"
+  "version": "0.0.10"
 }

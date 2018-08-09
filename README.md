@@ -1,16 +1,7 @@
 # FNdata
 
-## Test
+**Functional methods for manipulating data.**
 
-```npm run test```
-
-Will run all tests included in the **tests** folder.
-
-## Build
-
-```npm run build```
-
-
-## Release
-
-```npm run release```
+1. ```npm run test``` will run all tests included in the **tests** folder.
+2. ```npm run build```
+3. ```npm run release```
