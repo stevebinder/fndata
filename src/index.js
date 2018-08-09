@@ -35,6 +35,7 @@ export { default as reduce } from './reduce';
 export { default as reject } from './reject';
 export { default as reverse } from './reverse';
 export { default as set } from './set';
+export { default as some } from './some';
 export { default as sort } from './sort';
 export { default as split } from './split';
 export { default as sum } from './sum';
