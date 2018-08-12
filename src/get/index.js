@@ -3,7 +3,7 @@ const isEmpty = require('../isEmpty');
 const isFunction = require('../isFunction');
 const isNumber = require('../isNumber');
 const isString = require('../isString');
-const keep = require('../keep');
+const filter = require('../filter');
 const toNumber = require('../toNumber');
 const toString = require('../toString');
 
@@ -37,7 +37,7 @@ module.exports = (target, locator) => {
     return toNumber(toString(target)[locator]);
   }
   if (isFunction(locator)) {
-    return keep(target, locator)[0];
+    return filter(target, locator)[0];
   }
   const keys = getKeys(locator);
   let ref = target;

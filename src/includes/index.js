@@ -1,10 +1,10 @@
 const isNumber = require('../isNumber');
 const isString = require('../isString');
-const keep = require('../keep');
+const filter = require('../filter');
 
 module.exports = (target, checker) => {
   if (isNumber(target) || isString(target)) {
     return toString(checker).indexOf(toString(checker)) !== -1;
   }
-  return !!keep(target, checker).length;
+  return !!filter(target, checker).length;
 };

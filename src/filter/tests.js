@@ -1,16 +1,16 @@
-const keep = require('./index');
+const filter = require('./index');
 
 module.exports = {
   'use a function to check each item': [
     [1, 2, 3],
-    () => keep(
+    () => filter(
       [1, 2, 3, 4],
       item => item < 4,
     ),
   ],
   'use a function to check each index': [
     [2],
-    () => keep(
+    () => filter(
       [1, 2, 3, 4],
       (item, index) => index === 1,
     ),
@@ -20,7 +20,7 @@ module.exports = {
       { name: 'alex', age: 2 },
       { name: 'pete', age: 2 },
     ],
-    () => keep(
+    () => filter(
       [
         { name: 'alex', age: 2 },
         { name: 'bob', age: 4 },
@@ -29,20 +29,20 @@ module.exports = {
       { age: 2 },
     ),
   ],
-  'remove any non-undefined items when the keeper is undefined': [
+  'remove any non-undefined items when the filterer is undefined': [
     [undefined, undefined],
-    () => keep([undefined, null, undefined, 1]),
+    () => filter([undefined, null, undefined, 1]),
   ],
   'use a value to compare each item': [
     [2],
-    () => keep(
+    () => filter(
       [1, 2, 3],
       2,
     ),
   ],
   'use a list of values to check each item': [
     [1, 2, 3],
-    () => keep(
+    () => filter(
       [1, 2, 3, 4],
       [1, 2, 3],
     ),
@@ -52,7 +52,7 @@ module.exports = {
       { name: 'alex', age: 2 },
       { name: 'pete', age: 2 },
     ],
-    () => keep(
+    () => filter(
       [
         { name: 'alex', age: 2 },
         { name: 'bob', age: 4 },

@@ -13,6 +13,10 @@ module.exports = {
     true,
     () => some([0, 1, 2], (item, index, target) => target.length === 3),
   ],
+  'object with method': [
+    true,
+    () => some({ a: 1, b: 2, c: 'c' }, ({ key, value }) => key === value),
+  ],
   'check truthiness of each value': [
     true,
     () => some(0, 0, null, undefined, 1),
