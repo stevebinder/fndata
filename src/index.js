@@ -25,6 +25,7 @@ module.exports = {
   isShape: require('./isShape'),
   isString: require('./isString'),
   isUndefined: require('./isUndefined'),
+  find: require('./find'),
   join: require('./join'),
   keys: require('./keys'),
   loop: require('./loop'),

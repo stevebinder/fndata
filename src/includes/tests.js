@@ -1,5 +1,4 @@
 const includes = require('./index');
-const noop = require('../noop');
 
 module.exports = {
   'array contains comparison value': [

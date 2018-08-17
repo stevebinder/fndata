@@ -8,6 +8,7 @@ const tests = {
   entries: require('../src/entries/tests'),
   fill: require('../src/fill/tests'),
   filter: require('../src/filter/tests'),
+  find: require('../src/find/tests'),
   get: require('../src/get/tests'),
   id: require('../src/id/tests'),
   includes: require('../src/includes/tests'),
