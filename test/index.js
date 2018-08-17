@@ -26,6 +26,7 @@ const tests = {
   isString: require('../src/isString/tests'),
   isUndefined: require('../src/isUndefined/tests'),
   join: require('../src/join/tests'),
+  keys: require('../src/keys/tests'),
   loop: require('../src/loop/tests'),
   map: require('../src/map/tests'),
   memo: require('../src/memo/tests'),
@@ -46,6 +47,7 @@ const tests = {
   toBoolean: require('../src/toBoolean/tests'),
   toNumber: require('../src/toNumber/tests'),
   toString: require('../src/toString/tests'),
+  values: require('../src/values/tests'),
 };
 
 (() => {

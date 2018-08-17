@@ -26,6 +26,7 @@ module.exports = {
   isString: require('./isString'),
   isUndefined: require('./isUndefined'),
   join: require('./join'),
+  keys: require('./keys'),
   loop: require('./loop'),
   map: require('./map'),
   memo: require('./memo'),
@@ -46,4 +47,5 @@ module.exports = {
   toBoolean: require('./toBoolean'),
   toNumber: require('./toNumber'),
   toString: require('./toString'),
+  values: require('./values'),
 };
