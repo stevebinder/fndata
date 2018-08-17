@@ -45,6 +45,7 @@ module.exports = {
   split: require('./split'),
   sum: require('./sum'),
   swap: require('./swap'),
+  tap: require('./tap'),
   toBoolean: require('./toBoolean'),
   toNumber: require('./toNumber'),
   toString: require('./toString'),

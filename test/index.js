@@ -45,6 +45,7 @@ const tests = {
   split: require('../src/split/tests'),
   sum: require('../src/sum/tests'),
   swap: require('../src/swap/tests'),
+  tap: require('../src/tap/tests'),
   toBoolean: require('../src/toBoolean/tests'),
   toNumber: require('../src/toNumber/tests'),
   toString: require('../src/toString/tests'),
