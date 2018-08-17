@@ -32,6 +32,7 @@ const tests = {
   move: require('../src/move/tests'),
   none: require('../src/none/tests'),
   noop: require('../src/noop/tests'),
+  range: require('../src/range/tests'),
   reduce: require('../src/reduce/tests'),
   reject: require('../src/reject/tests'),
   reverse: require('../src/reverse/tests'),

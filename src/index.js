@@ -32,6 +32,7 @@ module.exports = {
   move: require('./move'),
   none: require('./none'),
   noop: require('./noop'),
+  range: require('./range'),
   reduce: require('./reduce'),
   reject: require('./reject'),
   reverse: require('./reverse'),
