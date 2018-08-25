@@ -5,6 +5,8 @@ module.exports = {
   concat: require('./concat'),
   copy: require('./copy'),
   curry: require('./curry'),
+  decode: require('./decode'),
+  encode: require('./encode'),
   entries: require('./entries'),
   fill: require('./fill'),
   filter: require('./filter'),

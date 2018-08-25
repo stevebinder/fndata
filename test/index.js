@@ -5,6 +5,8 @@ const tests = {
   concat: require('../src/concat/tests'),
   copy: require('../src/copy/tests'),
   curry: require('../src/curry/tests'),
+  decode: require('../src/decode/tests'),
+  encode: require('../src/encode/tests'),
   entries: require('../src/entries/tests'),
   fill: require('../src/fill/tests'),
   filter: require('../src/filter/tests'),

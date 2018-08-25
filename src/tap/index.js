@@ -1,5 +1,7 @@
+const env = `${process.env.NODE_ENV}`.toLowerCase();
+
 module.exports = value => {
-  if (`${process.env.NODE_ENV}`.toLowerCase() !== 'production') {
+  if (env !== 'test' && env !== 'production') {
     console.log(value);
   }
   return value;

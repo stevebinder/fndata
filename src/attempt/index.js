@@ -2,13 +2,15 @@ const isFunction = require('../isFunction');
 
 module.exports = (method, catcher) => {
   if (!isFunction(method)) {
-    return;
+    return method;
   }
   try {
-    method();
+    return method();
   } catch(e) {
     if (isFunction(catcher)) {
-      catcher(e);
+      return catcher(e);
+    } else {
+      return catcher;
     }
   }
 };
