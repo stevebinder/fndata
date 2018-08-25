@@ -1,17 +1,13 @@
 const join = require('./');
 
 module.exports = {
-  'strings': [
+  'one array argument with a delimiter': [
     'a.b.c',
     () => join(['a', 'b', 'c'], '.'),
   ],
   'one array argument without a delimiter': [
     'abc',
     () => join(['a', 'b', 'c']),
-  ],
-  'numbers': [
-    '0.1.2',
-    () => join([0, 1, 2], '.'),
   ],
   'several arguments': [
     'a.b.c',
