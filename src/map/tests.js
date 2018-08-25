@@ -58,4 +58,8 @@ module.exports = {
       ({ key, value }) => `${key}${value}`,
     ),
   ],
+  'iterate through an array and use a property or path': [
+    [1, 2],
+    () => map([{ a: 1 }, { a: 2 }], 'a'),
+  ],
 };
