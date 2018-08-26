@@ -38,20 +38,13 @@ module.exports = {
     },
   ],
   'copy an object': [
-    false,
+    true,
     () =>  {
-      const obj = { a: { b: 2 } };
-      const dup = copy(obj);
-      if (!obj || !dup) {
-        return true;
-      }
-      if (obj === dup) {
-        return true;
-      }
-      if (obj && dup && obj.b && dup.b && obj.b === dup.b) {
-        return true;
-      }
-      return false;
+      const original = { a: { b: true } };
+      const duplicate = copy(original);
+      return original.a.b === true
+        && duplicate.a.b === true
+        && original.a !== duplicate.a;
     },
   ],
 };

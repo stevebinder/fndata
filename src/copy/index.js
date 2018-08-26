@@ -1,4 +1,5 @@
 const isArray = require('../isArray');
+const isBoolean = require('../isBoolean');
 const isEmpty = require('../isEmpty');
 const isFunction = require('../isFunction');
 const isNumber = require('../isNumber');
@@ -6,7 +7,12 @@ const isObject = require('../isObject');
 const isString = require('../isString');
 
 const copy = value => {
-  if (isEmpty(value) || isNumber(value) || isString(value)) {
+  if (
+    isEmpty(value)
+    || isBoolean(value)
+    || isNumber(value)
+    || isString(value)
+  ) {
     return value;
   }
   if (isFunction(value)) {

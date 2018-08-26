@@ -16,6 +16,7 @@ const tests = {
   includes: require('../src/includes/tests'),
   invert: require('../src/invert/tests'),
   isArray: require('../src/isArray/tests'),
+  isBoolean: require('../src/isBoolean/tests'),
   isElement: require('../src/isElement/tests'),
   isEmpty: require('../src/isEmpty/tests'),
   isEqual: require('../src/isEqual/tests'),

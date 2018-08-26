@@ -15,6 +15,7 @@ module.exports = {
   includes: require('./includes'),
   invert: require('./invert'),
   isArray: require('./isArray'),
+  isBoolean: require('./isBoolean'),
   isElement: require('./isElement'),
   isEmpty: require('./isEmpty'),
   isEqual: require('./isEqual'),
