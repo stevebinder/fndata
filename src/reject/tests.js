@@ -62,4 +62,12 @@ module.exports = {
       ],
     ),
   ],
+  'check each key on an object': [
+    { a: 1, c: 3 },
+    () => reject({ a: 1, b: 2, c: 3 }, ({ key }) => key === 'b'),
+  ],
+  'check each value on an object': [
+    { a: 1, c: 3 },
+    () => reject({ a: 1, b: 2, c: 3 }, ({ value }) => value === 2),
+  ],
 }
