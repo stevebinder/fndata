@@ -1,3 +1,4 @@
+const curry = require('../curry');
 const entries = require('../entries');
 const isArray = require('../isArray');
 const isFunction = require('../isFunction');
@@ -6,6 +7,8 @@ const isObject = require('../isObject');
 const isShape = require('../isShape');
 const isString = require('../isString');
 const isUndefined = require('../isUndefined');
+const reduce = require('../reduce');
+const set = require('../set');
 const toString = require('../toString');
 
 const createArrayFilter = filterer => item => filterer.some(value =>
@@ -40,7 +43,12 @@ module.exports = (target, filterer) => {
     return target.filter(method);
   }
   if (isObject(target)) {
-    return entries(target).filter(method);
+    return curry(
+      target,
+      entries,
+      result => result.filter(method),
+      [reduce, {}, (result, { key, value }) => set(result, key, value)],
+    );
   }
   return [];
 };

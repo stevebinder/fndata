@@ -64,4 +64,12 @@ module.exports = {
       ],
     ),
   ],
+  'filter on an object based on the key': [
+    { a: 1, c: 3 },
+    () => filter({ a: 1, b: 2, c: 3 }, ({ key }) => key !== 'b'),
+  ],
+  'filter on an object based on the value': [
+    { a: 1, c: 3 },
+    () => filter({ a: 1, b: 2, c: 3 }, ({ value }) => value !== 2),
+  ],
 };
