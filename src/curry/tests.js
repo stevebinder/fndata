@@ -2,33 +2,26 @@ const curry = require('./');
 
 module.exports = {
   'pass a value along to each method': [
-    10,
-    () => curry(
-      1,
-      value => value * 20,
-      value => value - 11,
-      value => value + 1,
-    ),
-  ],
-  'pass a value along to each method': [
-    10,
-    () => curry(
-      1,
-      value => value * 20,
-      value => value - 11,
-      value => value + 1,
-    ),
-  ],
-  'pass a value along to each method using the array syntax': [
-    10,
+    7,
     () => {
       const add = (value, inc) => value + inc;
       return curry(
         1,
-        [add, 2],
+        result => result + 1,
+        result => result + 2,
         [add, 3],
-        [add, 4],
       );
+    },
+  ],
+  'return a promise if any method returns a promise': [
+    true,
+    () => {
+      const value = curry(
+        1,
+        result => result + 1,
+        result => new Promise(() => {}),
+      );
+      return value instanceof Promise;
     },
   ],
 };
