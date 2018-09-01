@@ -34,7 +34,11 @@ module.exports = (...args) => {
           }
         }
       };
-      result = await initialPromise;
+      try {
+        result = await initialPromise;
+      } catch (error) {
+        reject(error);
+      }
       run();
     });
   while (index < total) {
