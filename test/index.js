@@ -6,6 +6,7 @@ const tests = {
   copy: require('../src/copy/tests'),
   curry: require('../src/curry/tests'),
   decode: require('../src/decode/tests'),
+  ellipsis: require('../src/ellipsis/tests'),
   encode: require('../src/encode/tests'),
   entries: require('../src/entries/tests'),
   fill: require('../src/fill/tests'),

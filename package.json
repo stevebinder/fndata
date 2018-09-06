@@ -17,5 +17,5 @@
     "release": "git push origin master && git pull origin master && npm run test && npm run build && npm publish",
     "test": "NODE_ENV=test node test"
   },
-  "version": "0.7.1"
+  "version": "0.8.0"
 }

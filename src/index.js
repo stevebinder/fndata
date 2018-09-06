@@ -6,6 +6,7 @@ module.exports = {
   copy: require('./copy'),
   curry: require('./curry'),
   decode: require('./decode'),
+  ellipsis: require('./ellipsis'),
   encode: require('./encode'),
   entries: require('./entries'),
   fill: require('./fill'),
