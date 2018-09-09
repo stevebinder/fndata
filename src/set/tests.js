@@ -178,7 +178,7 @@ module.exports = {
       1,
     ),
   ],
-  'asdf': [
+  'update an object in an array when it matches a shape': [
     [
       { name: 'bob', age: 2 },
       { name: 'sam', age: 3 },
@@ -199,5 +199,9 @@ module.exports = {
       { age: 1 },
       { name: 'bob', age: 2 },
     ),
+  ],
+  'unset an object key': [
+    { a: 1 },
+    () => set({ a: 1, b: 2 }, 'b'),
   ],
 };

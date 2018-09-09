@@ -55,7 +55,12 @@ const setArrayOrObjectWithPath = (target, path, setter) => {
   let ref = result;
   keys.forEach((key, index) => {
     if (index === keys.length - 1) {
-      ref[key] = setter(ref[key]);
+      const value = setter(ref[key]);
+      if (isUndefined(value)) {
+        delete ref[key];
+      } else {
+        ref[key] = value;
+      }
     } else {
       ref[key] = getBase(keys[index + 1], ref[key]);
       ref = ref[key];
@@ -87,9 +92,6 @@ const setString = (target, comparer, setter) =>
     .join('');
 
 module.exports = (target, comparer, setter) => {
-  if (isUndefined(comparer) && isUndefined(setter)) {
-    return target;
-  }
   const setterFn = isFunction(setter)
     ? setter
     : () => setter;
