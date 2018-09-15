@@ -34,6 +34,7 @@ const tests = {
   keys: require('../src/keys/tests'),
   loop: require('../src/loop/tests'),
   map: require('../src/map/tests'),
+  match: require('../src/match/tests'),
   memo: require('../src/memo/tests'),
   move: require('../src/move/tests'),
   none: require('../src/none/tests'),
