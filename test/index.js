@@ -35,7 +35,7 @@ const tests = {
   loop: require('../src/loop/tests'),
   map: require('../src/map/tests'),
   match: require('../src/match/tests'),
-  memo: require('../src/memo/tests'),
+  memoize: require('../src/memoize/tests'),
   move: require('../src/move/tests'),
   none: require('../src/none/tests'),
   noop: require('../src/noop/tests'),
@@ -93,7 +93,7 @@ const tests = {
   if (errors.length) {
     const errorTitle = `FAIL ${errors.length} of ${total} tests.`;
     const errorLines = errors.map(({ body, description, index, name }) =>
-      `FAIL(${name} - ${description})${body && ' '}${body}`);
+      `FAIL(${name}): ${description} ${body && ' '}${body}`);
     const errorMessage = [errorTitle]
       .concat(errorLines)
       .join('\n    ');

@@ -35,7 +35,7 @@ module.exports = {
   loop: require('./loop'),
   map: require('./map'),
   match: require('./match'),
-  memo: require('./memo'),
+  memoize: require('./memoize'),
   move: require('./move'),
   none: require('./none'),
   noop: require('./noop'),

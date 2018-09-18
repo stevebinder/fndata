@@ -18,9 +18,10 @@ module.exports = {
     () => isEqual([1, 2], [1, 2]),
   ],
   'compare different arrays': [
-    true,
+    false,
     () => isEqual([1, 2], [1, 2, 3]),
     () => isEqual([1, 2, 3], [1, 2]),
+    () => isEqual([1, 2], [3, 4]),
   ],
   'compare matching objects': [
     true,
@@ -28,7 +29,7 @@ module.exports = {
     () => isEqual({ a: { b: 1 } }, { a: { b: 1 } }),
   ],
   'compare different objects': [
-    true,
+    false,
     () => isEqual({ a: 1 }, { a: 2 }),
     () => isEqual({ a: 1 }, { b: 1 }),
     () => isEqual({ a: { b: 1 } }, { a: { b: 2 } }),

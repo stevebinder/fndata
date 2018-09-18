@@ -4,11 +4,12 @@ module.exports = {
   'NaN is NaN': [
     true,
     () => isNan(NaN),
-    () => isNaN(null * undefined),
   ],
-  'non-NaN is not NaN': [
+  'anything other than NaN is not NaN': [
     false,
-    () => isNaN(Infinity),
-    () => isNaN(1 * 1),
+    () => isNan(),
+    () => isNan(null),
+    () => isNan(1),
+    () => isNan([]),
   ],
 };

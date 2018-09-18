@@ -2,27 +2,12 @@ const isArray = require('../isArray');
 const isNan = require('../isNan');
 const isObject = require('../isObject');
 
-const compare = (a, b) => {
-  for (const key in a) {
-    const aVal = a[key];
-    const bVal = b[key];
-    if (isObject(aVal)) {
-      if (!isObject(bVal)) {
-        return false;
-      }
-      if (!compare(aVal, bVal)) {
-        return false;
-      }
-    } else if (b[key] !== a[key]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-module.exports = (a, b) => {
+const isEqual = (a, b) => {
   if (a === b) {
     return true;
+  }
+  if (!a && b || a && !b) {
+    return false;
   }
   if (typeof a !== typeof b) {
     return false;
@@ -30,17 +15,20 @@ module.exports = (a, b) => {
   if (isNan(a)) {
     return isNan(b);
   }
-  if (isArray(a)) {
-    if (!isArray(b)) {
+  if (isArray(a) || isObject(a)) {
+    if (a.length !== b.length) {
       return false;
     }
-    return compare(a, b);
-  }
-  if (typeof a === 'object') {
-    if (typeof b !== 'object') {
-      return false;
+    for (const key in a) {
+      const aVal = a[key];
+      const bVal = b[key];
+      if (!isEqual(a[key], b[key])) {
+        return false;
+      }
     }
-    return compare(a, b);
+    return true;
   }
   return false;
 };
+
+module.exports = isEqual;
