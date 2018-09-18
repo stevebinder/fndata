@@ -7,10 +7,10 @@ module.exports = value => {
   };
   let lastArguments;
   let lastResult;
-  return (...arguments) => {
-    if (!isEqual(lastArguments, arguments)) {
-      lastArguments = arguments;
-      lastResult = value(...arguments);
+  return (...args) => {
+    if (!isEqual(lastArguments, args)) {
+      lastArguments = args;
+      lastResult = value(...args);
     }
     return lastResult;
   }
