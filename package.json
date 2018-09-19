@@ -1,10 +1,11 @@
 {
   "description": "Functional methods for manipulating data.",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-babili": "^0.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1"
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
   },
   "files": [
     "dist/"
@@ -13,9 +14,9 @@
   "main": "dist/index.js",
   "name": "fndata",
   "scripts": {
-    "build": "rm -rf dist && babel src --out-dir dist --ignore tests.js",
-    "release": "git push origin master && git pull origin master && npm run test && npm run build && npm publish",
-    "test": "NODE_ENV=test node test"
+    "build": "rm -rf dist && mkdir dist && NODE_ENV=production webpack -p",
+    "release": "git checkout master && git pull origin master && npm publish",
+    "test": "NODE_ENV=test webpack --mode=development && node dist/test"
   },
   "version": "0.10.0"
 }

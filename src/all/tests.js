@@ -1,6 +1,6 @@
-const all = require('./');
+import all from './';
 
-module.exports = {
+export default {
   'array with method that checks the value': [
     true,
     () => all([1, 2, 3], item => item > 0),

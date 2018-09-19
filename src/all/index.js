@@ -1,7 +1,7 @@
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
 
-module.exports = (...args) => {
+export default (...args) => {
   const [value, method] = args;
   if (
     args.length === 2
