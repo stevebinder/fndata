@@ -1,3 +1,3 @@
-const isUndefined = require('../isUndefined');
+import isUndefined from 'src/isUndefined';
 
-module.exports = value => typeof value === 'number' && isNaN(value);
+export default value => typeof value === 'number' && isNaN(value);

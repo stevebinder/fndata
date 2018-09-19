@@ -1,6 +1,6 @@
-const isString = require('./index');
+import isString from './';
 
-module.exports = {
+export default {
   'is a string': [
     true,
     () => isString(''),

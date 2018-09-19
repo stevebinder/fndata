@@ -1,8 +1,8 @@
-const filter = require('../filter');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
+import filter from 'src/filter';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
 
-module.exports = (value, checker) => {
+export default (value, checker) => {
   if (isNumber(value) || isString(value)) {
     return toString(checker).indexOf(toString(checker)) !== -1;
   }

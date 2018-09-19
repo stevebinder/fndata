@@ -1,6 +1,6 @@
-const concat = require('./');
+import concat from './';
 
-module.exports = {
+export default {
   'all array values': [
     [1, 2, 3, 4],
     () => concat([1], [2], [3, 4]),

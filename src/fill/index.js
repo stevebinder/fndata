@@ -1,6 +1,6 @@
-const isNumber = require('../isNumber');
+import isNumber from 'src/isNumber';
 
-module.exports = (count, method) => {
+export default (count, method) => {
   if (!isNumber(count)) {
     return [];
   }

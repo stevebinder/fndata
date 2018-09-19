@@ -1,6 +1,6 @@
-const toNumber = require('./index');
+import toNumber from './';
 
-module.exports = {
+export default {
   'should be a number': [
     1,
     () => toNumber(1),

@@ -1,6 +1,6 @@
-const sort = require('./');
+import sort from './';
 
-module.exports = {
+export default {
   'array in ascending order': [
     [0, 1, 2],
     () => sort([2, 0, 1]),

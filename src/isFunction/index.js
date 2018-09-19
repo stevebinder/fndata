@@ -1,1 +1,1 @@
-module.exports = value => typeof value === 'function';
+export default value => typeof value === 'function';

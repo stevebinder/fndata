@@ -1,10 +1,10 @@
-const isArray = require('../isArray');
-const isBoolean = require('../isBoolean');
-const isEmpty = require('../isEmpty');
-const isFunction = require('../isFunction');
-const isNumber = require('../isNumber');
-const isObject = require('../isObject');
-const isString = require('../isString');
+import isArray from 'src/isArray';
+import isBoolean from 'src/isBoolean';
+import isEmpty from 'src/isEmpty';
+import isFunction from 'src/isFunction';
+import isNumber from 'src/isNumber';
+import isObject from 'src/isObject';
+import isString from 'src/isString';
 
 const copy = value => {
   if (
@@ -32,4 +32,4 @@ const copy = value => {
   }
 }
 
-module.exports = copy;
+export default copy;

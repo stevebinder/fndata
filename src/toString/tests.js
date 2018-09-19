@@ -1,6 +1,6 @@
-const toString = require('./index');
+import toString from './';
 
-module.exports = {
+export default {
   'should be a non-empty string': [
     'a',
     () => toString('a'),

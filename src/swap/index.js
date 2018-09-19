@@ -1,7 +1,7 @@
-const isArray = require('../isArray');
-const isString = require('../isString');
+import isArray from 'src/isArray';
+import isString from 'src/isString';
 
-module.exports = (target, a, b) => {
+export default (target, a, b) => {
   if (isArray(target)) {
     return target.map((item, index) => {
       if (index === a) {

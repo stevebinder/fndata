@@ -1,7 +1,7 @@
-const isNumber = require('../isNumber');
-const reduce = require('../reduce');
+import isNumber from 'src/isNumber';
+import reduce from 'src/reduce';
 
-module.exports = (...values) => reduce(
+export default (...values) => reduce(
   values,
   (sum, num) => isNumber(num) ? sum + num : sum,
   0,

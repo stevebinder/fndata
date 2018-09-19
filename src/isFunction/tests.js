@@ -1,6 +1,6 @@
-const isFunction = require('./index');
+import isFunction from './';
 
-module.exports = {
+export default {
   'is a function': [
     true,
     () => isFunction(() => {}),

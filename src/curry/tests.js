@@ -1,6 +1,6 @@
-const curry = require('./');
+import curry from './';
 
-module.exports = {
+export default {
   'pass a value along to each method': [
     7,
     () => {

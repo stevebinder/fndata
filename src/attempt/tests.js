@@ -1,6 +1,6 @@
-const attempt = require('./index');
+import attempt from './';
 
-module.exports = {
+export default {
   'return the value if the supplied method is not a function': [
     'ok',
     () => attempt('ok'),

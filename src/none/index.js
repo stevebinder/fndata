@@ -1,5 +1,5 @@
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
 
 const none = (value, method) => {
   for (let i = 0; i < value.length; i += 1) {
@@ -10,7 +10,7 @@ const none = (value, method) => {
   return true;
 };
 
-module.exports = (...args) => {
+export default (...args) => {
   const [value, method] = args;
   if (
     args.length === 2

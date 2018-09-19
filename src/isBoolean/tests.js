@@ -1,6 +1,6 @@
-const isBoolean = require('./');
+import isBoolean from './';
 
-module.exports = {
+export default {
   'is a boolean': [
     true,
     () => isBoolean(true),

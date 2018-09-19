@@ -1,6 +1,6 @@
-const copy = require('./index');
+import copy from './';
 
-module.exports = {
+export default {
   'copy undefined': [
     undefined,
     () => copy(undefined),

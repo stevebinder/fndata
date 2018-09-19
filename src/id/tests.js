@@ -1,6 +1,6 @@
-const id = require('./');
+import id from './';
 
-module.exports = {
+export default {
   'should return a string': [
     true,
     () => {

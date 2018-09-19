@@ -1,6 +1,6 @@
-const invert = require('./index');
+import invert from './';
 
-module.exports = {
+export default {
   'invert truthy': [
     false,
     () => invert(true),

@@ -1,6 +1,6 @@
-const decode = require('./');
+import decode from './';
 
-module.exports = {
+export default {
   'decode a valid value': [
     [1, 2, 3],
     () => decode('[1,2,3]'),

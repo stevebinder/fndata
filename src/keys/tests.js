@@ -1,6 +1,6 @@
-const keys = require('./');
+import keys from './';
 
-module.exports = {
+export default {
   'extract keys from an object': [
     ['a', 'b', 'c'],
     () => keys({ a: 1, b: 2, c: 3 }),

@@ -1,6 +1,6 @@
-const isNan = require('./index');
+import isNan from './';
 
-module.exports = {
+export default {
   'NaN is NaN': [
     true,
     () => isNan(NaN),

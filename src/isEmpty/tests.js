@@ -1,6 +1,6 @@
-const isEmpty = require('./index');
+import isEmpty from './';
 
-module.exports = {
+export default {
   'null or undefined values': [
     true,
     () => isEmpty(),

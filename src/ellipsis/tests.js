@@ -1,7 +1,7 @@
-const ellipsis = require('./');
-const isString = require('../isString');
+import ellipsis from './';
+import isString from 'src/isString';
 
-module.exports = {
+export default {
   'always return a string': [
     true,
     () => isString(ellipsis()),

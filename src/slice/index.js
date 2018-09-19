@@ -1,11 +1,11 @@
-const curry = require('../curry');
-const isArray = require('../isArray');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import curry from 'src/curry';
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
-module.exports = (value, start, end) => {
+export default (value, start, end) => {
   if (isString(value) || isArray(value)) {
     return value.slice(start, end);
   }

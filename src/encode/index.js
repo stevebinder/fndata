@@ -1,3 +1,3 @@
-const attempt = require('../attempt');
+import attempt from 'src/attempt';
 
-module.exports = value => attempt(() => JSON.stringify(value), '');
+export default value => attempt(() => JSON.stringify(value), '');

@@ -1,6 +1,6 @@
-const entries = require('./index');
+import entries from './';
 
-module.exports = {
+export default {
   'argument is not an object or is an empty object': [
     [],
     () => entries(),

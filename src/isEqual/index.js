@@ -1,6 +1,6 @@
-const isArray = require('../isArray');
-const isNan = require('../isNan');
-const isObject = require('../isObject');
+import isArray from 'src/isArray';
+import isNan from 'src/isNan';
+import isObject from 'src/isObject';
 
 const isEqual = (a, b) => {
   if (a === b) {
@@ -31,4 +31,4 @@ const isEqual = (a, b) => {
   return false;
 };
 
-module.exports = isEqual;
+export default isEqual;

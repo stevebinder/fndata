@@ -1,67 +1,118 @@
 import { default as all } from 'src/all/tests';
+import { default as attempt } from 'src/attempt/tests';
+import { default as compose } from 'src/compose/tests';
+import { default as concat } from 'src/concat/tests';
+import { default as copy } from 'src/copy/tests';
+import { default as curry } from 'src/curry/tests';
+import { default as decode } from 'src/decode/tests';
+import { default as ellipsis } from 'src/ellipsis/tests';
+import { default as encode } from 'src/encode/tests';
+import { default as entries } from 'src/entries/tests';
+import { default as fill } from 'src/fill/tests';
+import { default as filter } from 'src/filter/tests';
+import { default as get } from 'src/get/tests';
+import { default as id } from 'src/id/tests';
+import { default as includes } from 'src/includes/tests';
+import { default as invert } from 'src/invert/tests';
+import { default as isArray } from 'src/isArray/tests';
+import { default as isBoolean } from 'src/isBoolean/tests';
+import { default as isElement } from 'src/isElement/tests';
+import { default as isEmpty } from 'src/isEmpty/tests';
+import { default as isEqual } from 'src/isEqual/tests';
+import { default as isFunction } from 'src/isFunction/tests';
+import { default as isInfinity } from 'src/isInfinity/tests';
+import { default as isNan } from 'src/isNan/tests';
+import { default as isNumber } from 'src/isNumber/tests';
+import { default as isNull } from 'src/isNull/tests';
+import { default as isObject } from 'src/isObject/tests';
+import { default as isShape } from 'src/isShape/tests';
+import { default as isString } from 'src/isString/tests';
+import { default as isUndefined } from 'src/isUndefined/tests';
+import { default as find } from 'src/find/tests';
+import { default as join } from 'src/join/tests';
+import { default as keys } from 'src/keys/tests';
+import { default as loop } from 'src/loop/tests';
+import { default as map } from 'src/map/tests';
+import { default as match } from 'src/match/tests';
+import { default as memoize } from 'src/memoize/tests';
+import { default as move } from 'src/move/tests';
+import { default as none } from 'src/none/tests';
+import { default as noop } from 'src/noop/tests';
+import { default as range } from 'src/range/tests';
+import { default as reduce } from 'src/reduce/tests';
+import { default as reject } from 'src/reject/tests';
+import { default as reverse } from 'src/reverse/tests';
+import { default as set } from 'src/set/tests';
+import { default as slice } from 'src/slice/tests';
+import { default as some } from 'src/some/tests';
+import { default as sort } from 'src/sort/tests';
+import { default as split } from 'src/split/tests';
+import { default as sum } from 'src/sum/tests';
+import { default as swap } from 'src/swap/tests';
+import { default as tap } from 'src/tap/tests';
+import { default as toBoolean } from 'src/toBoolean/tests';
+import { default as toNumber } from 'src/toNumber/tests';
+import { default as toString } from 'src/toString/tests';
+import { default as values } from 'src/values/tests';
 
 const tests = {
   all,
-}
-
-// const tests = {
-//   all: require('../src/all/tests'),
-//   attempt: require('../src/attempt/tests'),
-//   compose: require('../src/compose/tests'),
-//   concat: require('../src/concat/tests'),
-//   copy: require('../src/copy/tests'),
-//   curry: require('../src/curry/tests'),
-//   decode: require('../src/decode/tests'),
-//   ellipsis: require('../src/ellipsis/tests'),
-//   encode: require('../src/encode/tests'),
-//   entries: require('../src/entries/tests'),
-//   fill: require('../src/fill/tests'),
-//   filter: require('../src/filter/tests'),
-//   find: require('../src/find/tests'),
-//   get: require('../src/get/tests'),
-//   id: require('../src/id/tests'),
-//   includes: require('../src/includes/tests'),
-//   invert: require('../src/invert/tests'),
-//   isArray: require('../src/isArray/tests'),
-//   isBoolean: require('../src/isBoolean/tests'),
-//   isElement: require('../src/isElement/tests'),
-//   isEmpty: require('../src/isEmpty/tests'),
-//   isEqual: require('../src/isEqual/tests'),
-//   isFunction: require('../src/isFunction/tests'),
-//   isInfinity: require('../src/isInfinity/tests'),
-//   isNan: require('../src/isNan/tests'),
-//   isNumber: require('../src/isNumber/tests'),
-//   isNull: require('../src/isNull/tests'),
-//   isObject: require('../src/isObject/tests'),
-//   isShape: require('../src/isShape/tests'),
-//   isString: require('../src/isString/tests'),
-//   isUndefined: require('../src/isUndefined/tests'),
-//   join: require('../src/join/tests'),
-//   keys: require('../src/keys/tests'),
-//   loop: require('../src/loop/tests'),
-//   map: require('../src/map/tests'),
-//   match: require('../src/match/tests'),
-//   memoize: require('../src/memoize/tests'),
-//   move: require('../src/move/tests'),
-//   none: require('../src/none/tests'),
-//   noop: require('../src/noop/tests'),
-//   range: require('../src/range/tests'),
-//   reduce: require('../src/reduce/tests'),
-//   reject: require('../src/reject/tests'),
-//   reverse: require('../src/reverse/tests'),
-//   set: require('../src/set/tests'),
-//   slice: require('../src/slice/tests'),
-//   some: require('../src/some/tests'),
-//   sort: require('../src/sort/tests'),
-//   split: require('../src/split/tests'),
-//   sum: require('../src/sum/tests'),
-//   swap: require('../src/swap/tests'),
-//   tap: require('../src/tap/tests'),
-//   toBoolean: require('../src/toBoolean/tests'),
-//   toNumber: require('../src/toNumber/tests'),
-//   toString: require('../src/toString/tests'),
-//   values: require('../src/values/tests'),
-// };
+  attempt,
+  compose,
+  concat,
+  copy,
+  curry,
+  decode,
+  ellipsis,
+  encode,
+  entries,
+  fill,
+  filter,
+  get,
+  id,
+  includes,
+  invert,
+  isArray,
+  isBoolean,
+  isElement,
+  isEmpty,
+  isEqual,
+  isFunction,
+  isInfinity,
+  isNan,
+  isNumber,
+  isNull,
+  isObject,
+  isShape,
+  isString,
+  isUndefined,
+  find,
+  join,
+  keys,
+  loop,
+  map,
+  match,
+  memoize,
+  move,
+  none,
+  noop,
+  range,
+  reduce,
+  reject,
+  reverse,
+  set,
+  slice,
+  some,
+  sort,
+  split,
+  sum,
+  swap,
+  tap,
+  toBoolean,
+  toNumber,
+  toString,
+  values,
+};
 
 !(() => {
   const errors = [];

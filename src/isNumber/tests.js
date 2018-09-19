@@ -1,6 +1,6 @@
-const isNumber = require('./index');
+import isNumber from './';
 
-module.exports = {
+export default {
   'is a number': [
     true,
     () => isNumber(0),

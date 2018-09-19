@@ -1,14 +1,14 @@
-const copy = require('../copy');
-const isArray = require('../isArray');
-const isEmpty = require('../isEmpty');
-const isFunction = require('../isFunction');
-const isNumber = require('../isNumber');
-const isShape = require('../isShape');
-const isString = require('../isString');
-const isObject = require('../isObject');
-const isUndefined = require('../isUndefined');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import copy from 'src/copy';
+import isArray from 'src/isArray';
+import isEmpty from 'src/isEmpty';
+import isFunction from 'src/isFunction';
+import isNumber from 'src/isNumber';
+import isShape from 'src/isShape';
+import isString from 'src/isString';
+import isObject from 'src/isObject';
+import isUndefined from 'src/isUndefined';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
 const getBase = (key, pointer) => {
   if (isNumber(key)) {
@@ -91,7 +91,7 @@ const setString = (target, comparer, setter) =>
     )
     .join('');
 
-module.exports = (target, comparer, setter) => {
+export default (target, comparer, setter) => {
   const setterFn = isFunction(setter)
     ? setter
     : () => setter;

@@ -1,6 +1,6 @@
-const get = require('./index');
+import get from './';
 
-module.exports = {
+export default {
   'target not supplied': [
     undefined,
     () => get(),

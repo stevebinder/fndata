@@ -1,6 +1,6 @@
-const compose = require('./');
+import compose from './';
 
-module.exports = {
+export default {
   'create a method that curries along the given value': [
     10,
     () => {

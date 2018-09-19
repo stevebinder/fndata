@@ -1,10 +1,10 @@
-const entries = require('../entries');
-const get = require('../get');
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
-const isObject = require('../isObject');
-const isString = require('../isString');
-const toString = require('../toString');
+import entries from 'src/entries';
+import get from 'src/get';
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
+import isObject from 'src/isObject';
+import isString from 'src/isString';
+import toString from 'src/toString';
 
 const mapString = (target, method) => target
   .split('')
@@ -12,7 +12,7 @@ const mapString = (target, method) => target
   .join('');
 
 
-module.exports = (target, method) => {
+export default (target, method) => {
   const mapper = (() => {
     if (isFunction(method)) {
       return method;

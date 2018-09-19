@@ -1,1 +1,1 @@
-module.exports = value => typeof value === 'boolean';
+export default value => typeof value === 'boolean';

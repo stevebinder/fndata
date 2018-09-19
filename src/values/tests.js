@@ -1,6 +1,6 @@
-const values = require('./');
+import values from './';
 
-module.exports = {
+export default {
   'extract values from an object': [
     [1, 2, 3],
     () => values({ a: 1, b: 2, c: 3 }),

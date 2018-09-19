@@ -1,7 +1,7 @@
-const isString = require('../isString');
-const toString = require('../toString');
+import isString from 'src/isString';
+import toString from 'src/toString';
 
-module.exports = (value, max = Infinity, characters = '...') => {
+export default (value, max = Infinity, characters = '...') => {
   if (!isString(value)) {
     return toString(value);
   }

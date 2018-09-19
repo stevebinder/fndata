@@ -1,10 +1,10 @@
-const entries = require('../entries');
-const loop = require('../loop');
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
-const isObject = require('../isObject');
+import entries from 'src/entries';
+import loop from 'src/loop';
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
+import isObject from 'src/isObject';
 
-module.exports = (...args) => {
+export default (...args) => {
   const [value, method] = args;
   if (args.length === 2 && isFunction(method)) {
     if (isArray(value)) {

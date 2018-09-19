@@ -1,13 +1,13 @@
-const entries = require('../entries');
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
-const isNumber = require('../isNumber');
-const isObject = require('../isObject');
-const isString = require('../isString');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import entries from 'src/entries';
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
+import isNumber from 'src/isNumber';
+import isObject from 'src/isObject';
+import isString from 'src/isString';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
-module.exports = (target, reducer, initial) => {
+export default (target, reducer, initial) => {
   const reducerMethod = (() => {
     if (isFunction(reducer)) {
       return reducer;

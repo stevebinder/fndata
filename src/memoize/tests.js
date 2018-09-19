@@ -1,7 +1,7 @@
-const memoize = require('./');
-const isFunction = require('../isFunction');
+import memoize from './';
+import isFunction from 'src/isFunction';
 
-module.exports = {
+export default {
   'should always return a function': [
     true,
     () => isFunction(memoize(() => {})),

@@ -1,1 +1,1 @@
-module.exports = value => value === Infinity;
+export default value => value === Infinity;

@@ -1,6 +1,6 @@
-const isNull = require('./index');
+import isNull from './';
 
-module.exports = {
+export default {
   'return true for undefined': [
     true,
     () => isNull(null),

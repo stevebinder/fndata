@@ -1,6 +1,6 @@
-const find = require('./index');
+import find from './';
 
-module.exports = {
+export default {
   'array contains comparison value': [
     1,
     () => find([1, 2, 3], 1),

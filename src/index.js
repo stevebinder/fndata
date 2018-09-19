@@ -1,59 +1,56 @@
 export { default as all } from 'src/all';
-
-//   all: require('./all'),
-//   attempt: require('./attempt'),
-//   compose: require('./compose'),
-//   concat: require('./concat'),
-//   copy: require('./copy'),
-//   curry: require('./curry'),
-//   decode: require('./decode'),
-//   ellipsis: require('./ellipsis'),
-//   encode: require('./encode'),
-//   entries: require('./entries'),
-//   fill: require('./fill'),
-//   filter: require('./filter'),
-//   get: require('./get'),
-//   id: require('./id'),
-//   includes: require('./includes'),
-//   invert: require('./invert'),
-//   isArray: require('./isArray'),
-//   isBoolean: require('./isBoolean'),
-//   isElement: require('./isElement'),
-//   isEmpty: require('./isEmpty'),
-//   isEqual: require('./isEqual'),
-//   isFunction: require('./isFunction'),
-//   isInfinity: require('./isInfinity'),
-//   isNan: require('./isNan'),
-//   isNumber: require('./isNumber'),
-//   isNull: require('./isNull'),
-//   isObject: require('./isObject'),
-//   isShape: require('./isShape'),
-//   isString: require('./isString'),
-//   isUndefined: require('./isUndefined'),
-//   find: require('./find'),
-//   join: require('./join'),
-//   keys: require('./keys'),
-//   loop: require('./loop'),
-//   map: require('./map'),
-//   match: require('./match'),
-//   memoize: require('./memoize'),
-//   move: require('./move'),
-//   none: require('./none'),
-//   noop: require('./noop'),
-//   range: require('./range'),
-//   reduce: require('./reduce'),
-//   reject: require('./reject'),
-//   reverse: require('./reverse'),
-//   set: require('./set'),
-//   slice: require('./slice'),
-//   some: require('./some'),
-//   sort: require('./sort'),
-//   split: require('./split'),
-//   sum: require('./sum'),
-//   swap: require('./swap'),
-//   tap: require('./tap'),
-//   toBoolean: require('./toBoolean'),
-//   toNumber: require('./toNumber'),
-//   toString: require('./toString'),
-//   values: require('./values'),
-// };
+export { default as attempt } from 'src/attempt';
+export { default as compose } from 'src/compose';
+export { default as concat } from 'src/concat';
+export { default as copy } from 'src/copy';
+export { default as curry } from 'src/curry';
+export { default as decode } from 'src/decode';
+export { default as ellipsis } from 'src/ellipsis';
+export { default as encode } from 'src/encode';
+export { default as entries } from 'src/entries';
+export { default as fill } from 'src/fill';
+export { default as filter } from 'src/filter';
+export { default as get } from 'src/get';
+export { default as id } from 'src/id';
+export { default as includes } from 'src/includes';
+export { default as invert } from 'src/invert';
+export { default as isArray } from 'src/isArray';
+export { default as isBoolean } from 'src/isBoolean';
+export { default as isElement } from 'src/isElement';
+export { default as isEmpty } from 'src/isEmpty';
+export { default as isEqual } from 'src/isEqual';
+export { default as isFunction } from 'src/isFunction';
+export { default as isInfinity } from 'src/isInfinity';
+export { default as isNan } from 'src/isNan';
+export { default as isNumber } from 'src/isNumber';
+export { default as isNull } from 'src/isNull';
+export { default as isObject } from 'src/isObject';
+export { default as isShape } from 'src/isShape';
+export { default as isString } from 'src/isString';
+export { default as isUndefined } from 'src/isUndefined';
+export { default as find } from 'src/find';
+export { default as join } from 'src/join';
+export { default as keys } from 'src/keys';
+export { default as loop } from 'src/loop';
+export { default as map } from 'src/map';
+export { default as match } from 'src/match';
+export { default as memoize } from 'src/memoize';
+export { default as move } from 'src/move';
+export { default as none } from 'src/none';
+export { default as noop } from 'src/noop';
+export { default as range } from 'src/range';
+export { default as reduce } from 'src/reduce';
+export { default as reject } from 'src/reject';
+export { default as reverse } from 'src/reverse';
+export { default as set } from 'src/set';
+export { default as slice } from 'src/slice';
+export { default as some } from 'src/some';
+export { default as sort } from 'src/sort';
+export { default as split } from 'src/split';
+export { default as sum } from 'src/sum';
+export { default as swap } from 'src/swap';
+export { default as tap } from 'src/tap';
+export { default as toBoolean } from 'src/toBoolean';
+export { default as toNumber } from 'src/toNumber';
+export { default as toString } from 'src/toString';
+export { default as values } from 'src/values';

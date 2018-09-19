@@ -1,7 +1,7 @@
-const isNumber = require('../isNumber');
-const isString = require('../isString');
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
 
-module.exports = value => {
+export default value => {
   if (isString(value)) {
     return value;
   }

@@ -1,6 +1,6 @@
-const match = require('./');
+import match from './';
 
-module.exports = {
+export default {
   'return an empty array if arguments are not valid': [
     [],
     () => match('', ''),

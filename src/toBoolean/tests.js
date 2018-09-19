@@ -1,6 +1,6 @@
-const toBoolean = require('./index');
+import toBoolean from './';
 
-module.exports = {
+export default {
   'truthy values': [
     true,
     () => toBoolean(1),

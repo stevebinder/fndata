@@ -1,6 +1,6 @@
-const encode = require('./');
+import encode from './';
 
-module.exports = {
+export default {
   'encode a valid value': [
     '[1,2,3]',
     () => encode([1, 2, 3]),

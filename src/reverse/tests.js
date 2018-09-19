@@ -1,6 +1,6 @@
-const reverse = require('./index');
+import reverse from './';
 
-module.exports = {
+export default {
   'reverse a string': [
     'cat',
     () => reverse('tac'),

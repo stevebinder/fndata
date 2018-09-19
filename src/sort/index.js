@@ -1,14 +1,14 @@
-const curry = require('../curry');
-const isArray = require('../isArray');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const join = require('../join');
-const map = require('../map');
-const split = require('../split');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import curry from 'src/curry';
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import join from 'src/join';
+import map from 'src/map';
+import split from 'src/split';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
-module.exports = (value, method) => {
+export default (value, method) => {
   if (isArray(value)) {
     return [...value].sort(method);
   }

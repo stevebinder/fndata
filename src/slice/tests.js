@@ -1,6 +1,6 @@
-const slice = require('./');
+import slice from './';
 
-module.exports = {
+export default {
   'slice an array': [
     [3, 4],
     () => slice([0, 1, 2, 3, 4], 3, 5),

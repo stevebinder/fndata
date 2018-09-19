@@ -1,11 +1,11 @@
-const isArray = require('../isArray');
-const isEmpty = require('../isEmpty');
-const isFunction = require('../isFunction');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const filter = require('../filter');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import isArray from 'src/isArray';
+import isEmpty from 'src/isEmpty';
+import isFunction from 'src/isFunction';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import filter from 'src/filter';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
 const getKeys = value => {
   const raw = (() => {
@@ -26,7 +26,7 @@ const getKeys = value => {
   });
 };
 
-module.exports = (target, locator) => {
+export default (target, locator) => {
   if (isEmpty(target)) {
     return undefined;
   }

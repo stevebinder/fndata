@@ -1,6 +1,6 @@
-const move = require('./');
+import move from './';
 
-module.exports = {
+export default {
   'return the value if not a string, number, or array': [
     true,
     () => move(true, 1, 1),

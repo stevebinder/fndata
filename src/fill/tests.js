@@ -1,6 +1,6 @@
-const fill = require('./index');
+import fill from './';
 
-module.exports = {
+export default {
   'create an empty array if first argument is not a number': [
     [],
     () => fill(),

@@ -1,14 +1,14 @@
-const curry = require('../curry');
-const encode = require('../encode');
-const isArray = require('../isArray');
-const isNumber = require('../isNumber');
-const isObject = require('../isObject');
-const isString = require('../isString');
-const map = require('../map');
-const slice = require('../slice');
-const toString = require('../toString');
+import curry from 'src/curry';
+import encode from 'src/encode';
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isObject from 'src/isObject';
+import isString from 'src/isString';
+import map from 'src/map';
+import slice from 'src/slice';
+import toString from 'src/toString';
 
-module.exports = (...args) => {
+export default (...args) => {
   const values = (() => {
     if (args.length <= 2) {
       if (isArray(args[0])) {

@@ -1,6 +1,6 @@
-const tap = require('./');
+import tap from './';
 
-module.exports = {
+export default {
   'return the value': [
     'a',
     () => tap('a'),

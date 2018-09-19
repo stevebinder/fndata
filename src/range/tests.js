@@ -1,6 +1,6 @@
-const range = require('./');
+import range from './';
 
-module.exports = {
+export default {
   'constrain between two numbers': [
     4,
     () => range(100, 4, 4),

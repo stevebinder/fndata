@@ -1,6 +1,6 @@
-const map = require('./index');
+import map from './';
 
-module.exports = {
+export default {
   'return an empty array for a non-mappable item': [
     [],
     () => map(),

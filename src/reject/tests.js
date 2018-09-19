@@ -1,6 +1,6 @@
-const reject = require('./index');
+import reject from './';
 
-module.exports = {
+export default {
   'use a function to check each item': [
     [1, 2, 3],
     () => reject(

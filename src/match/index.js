@@ -1,6 +1,6 @@
-const isString = require('../isString');
+import isString from 'src/isString';
 
-module.exports = (text, matcher, index = -1) => {
+export default (text, matcher, index = -1) => {
   if (!text || !matcher) {
     return [];
   }

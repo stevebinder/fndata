@@ -1,7 +1,7 @@
-const isArray = require('../isArray');
-const isNull = require('../isNull');
+import isArray from 'src/isArray';
+import isNull from 'src/isNull';
 
-module.exports = value =>
+export default value =>
   !isNull(value)
   && typeof value === 'object'
   && !isArray(value);

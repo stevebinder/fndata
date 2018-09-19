@@ -1,1 +1,1 @@
-module.exports = value => value instanceof HTMLElement;
+export default value => value instanceof HTMLElement;

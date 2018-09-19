@@ -1,6 +1,6 @@
-const isEqual = require('./index');
+import isEqual from './';
 
-module.exports = {
+export default {
   'compare exact values': [
     true,
     () => isEqual(true, true),

@@ -1,6 +1,6 @@
-const isInfinity = require('./index');
+import isInfinity from './';
 
-module.exports = {
+export default {
   'Infinity equals Infinity': [
     true,
     () => isInfinity(Infinity),

@@ -1,6 +1,6 @@
-const filter = require('./index');
+import filter from './';
 
-module.exports = {
+export default {
   'use a function to check each item': [
     [1, 2, 3],
     () => filter(

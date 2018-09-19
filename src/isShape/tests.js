@@ -1,6 +1,6 @@
-const isShape = require('./index');
+import isShape from './';
 
-module.exports = {
+export default {
   'compare partial shapes': [
     true,
     () => isShape(

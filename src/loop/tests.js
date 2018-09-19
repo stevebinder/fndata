@@ -1,6 +1,6 @@
-const loop = require('./index');
+import loop from './';
 
-module.exports = {
+export default {
   'should not fail if item is not iterable': [
     undefined,
     () => loop(),

@@ -1,7 +1,7 @@
-const isArray = require('../isArray');
-const reduce = require('../reduce');
+import isArray from 'src/isArray';
+import reduce from 'src/reduce';
 
-module.exports = (...values) => reduce(
+export default (...values) => reduce(
   values,
   (result, item) => isArray(item)
     ? ([...result, ...item])

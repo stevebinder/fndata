@@ -1,8 +1,8 @@
-const isArray = require('../isArray');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
 const moveArray = (array, fromIndex, toIndex) => {
   if (fromIndex === toIndex) {
@@ -25,7 +25,7 @@ const moveArray = (array, fromIndex, toIndex) => {
   );
 };
 
-module.exports = (value, fromIndex, toIndex) => {
+export default (value, fromIndex, toIndex) => {
   if (
     fromIndex === toIndex
     || !isNumber(fromIndex)

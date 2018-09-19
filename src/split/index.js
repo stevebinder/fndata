@@ -1,11 +1,11 @@
-const curry = require('../curry');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
-const map = require('../map');
+import curry from 'src/curry';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
+import map from 'src/map';
 
-module.exports = (value, splitter) => {
+export default (value, splitter) => {
   if (isString(value)) {
     return value.split(splitter || '');
   }

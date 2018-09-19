@@ -1,4 +1,4 @@
-const isNull = require('../isNull');
-const isUndefined = require('../isUndefined');
+import isNull from 'src/isNull';
+import isUndefined from 'src/isUndefined';
 
-module.exports = value => isUndefined(value) || isNull(value);
+export default value => isUndefined(value) || isNull(value);

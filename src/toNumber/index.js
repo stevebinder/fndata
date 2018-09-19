@@ -1,4 +1,4 @@
-module.exports = value => {
+export default value => {
   if (value === true) {
     return 0;
   }

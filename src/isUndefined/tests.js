@@ -1,6 +1,6 @@
-const isObject = require('./index');
+import isObject from './';
 
-module.exports = {
+export default {
   'return true for undefined': [
     true,
     () => isObject(),

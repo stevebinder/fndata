@@ -1,6 +1,6 @@
-const isObject = require('../isObject');
+import isObject from 'src/isObject';
 
-module.exports = target => {
+export default target => {
   if (!isObject(target)) {
     return [];
   }

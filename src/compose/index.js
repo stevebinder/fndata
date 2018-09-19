@@ -1,3 +1,3 @@
-const curry = require('../curry');
+import curry from 'src/curry';
 
-module.exports = (...args) => value => curry(value, ...args);
+export default (...args) => value => curry(value, ...args);

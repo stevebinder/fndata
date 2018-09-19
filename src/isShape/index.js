@@ -1,5 +1,5 @@
-const entries = require('../entries');
-const isObject = require('../isObject');
+import entries from 'src/entries';
+import isObject from 'src/isObject';
 
 const compare = (a, b) => {
   for (const key in a) {
@@ -19,7 +19,7 @@ const compare = (a, b) => {
   return true;
 };
 
-module.exports = (target, properties, exact) => {
+export default (target, properties, exact) => {
   const a = exact ? target : properties;
   const b = exact ? properties : target;
   return compare(a, b);

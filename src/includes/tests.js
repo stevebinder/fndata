@@ -1,6 +1,6 @@
-const includes = require('./index');
+import includes from './';
 
-module.exports = {
+export default {
   'array contains comparison value': [
     true,
     () => includes([1, 2, 3], 1),

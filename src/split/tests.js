@@ -1,6 +1,6 @@
-const split = require('./');
+import split from './';
 
-module.exports = {
+export default {
   'non string or number': [
     [],
     () => split(),

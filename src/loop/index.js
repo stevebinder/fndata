@@ -1,11 +1,11 @@
-const entries = require('../entries');
-const isArray = require('../isArray');
-const isFunction = require('../isFunction');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const isUndefined = require('../isUndefined');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import entries from 'src/entries';
+import isArray from 'src/isArray';
+import isFunction from 'src/isFunction';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import isUndefined from 'src/isUndefined';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
 function over(target, method) {
   for (let i = 0; i < target.length; i += 1) {
@@ -13,7 +13,7 @@ function over(target, method) {
   }
 }
 
-module.exports = (target, method) => {
+export default (target, method) => {
   if (!isFunction(method)) {
     return;
   }

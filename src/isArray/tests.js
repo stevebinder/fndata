@@ -1,6 +1,6 @@
-const isArray = require('./index');
+import isArray from './';
 
-module.exports = {
+export default {
   'value is an array': [
     true,
     () => isArray([]),

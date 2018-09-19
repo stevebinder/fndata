@@ -1,6 +1,6 @@
-const none = require('./');
+import none from './';
 
-module.exports = {
+export default {
   'array with method that checks the value': [
     true,
     () => none([1, 2, 3], item => item > 3),

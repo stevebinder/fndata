@@ -1,6 +1,6 @@
-const noop = require('./index');
+import noop from './';
 
-module.exports = {
+export default {
   'should return undefined': [
     undefined,
     () => noop(),

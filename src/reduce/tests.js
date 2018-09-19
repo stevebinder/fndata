@@ -1,6 +1,6 @@
-const reduce = require('./index');
+import reduce from './';
 
-module.exports = {
+export default {
   'return initial value if no reducer': [
     1,
     () => reduce('abc', 1),

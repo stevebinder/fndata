@@ -1,1 +1,1 @@
-module.exports = value => value === null;
+export default value => value === null;

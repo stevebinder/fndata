@@ -1,6 +1,6 @@
-const join = require('./');
+import join from './';
 
-module.exports = {
+export default {
   'one array argument with a delimiter': [
     'a.b.c',
     () => join(['a', 'b', 'c'], '.'),

@@ -1,3 +1,3 @@
-const filter = require('../filter');
+import filter from 'src/filter';
 
-module.exports = (value, comparer) => filter(value, comparer)[0];
+export default (value, comparer) => filter(value, comparer)[0];

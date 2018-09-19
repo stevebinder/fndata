@@ -1,7 +1,7 @@
-const isEqual = require('../isEqual');
-const isFunction = require('../isFunction');
+import isEqual from 'src/isEqual';
+import isFunction from 'src/isFunction';
 
-module.exports = value => {
+export default value => {
   if (!isFunction(value)) {
     return () => value;
   };

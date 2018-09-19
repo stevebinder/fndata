@@ -1,6 +1,6 @@
-const some = require('./');
+import some from './';
 
-module.exports = {
+export default {
   'array with method that checks the value': [
     true,
     () => some([0, 1, 2], item => item > 1),

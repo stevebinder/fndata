@@ -1,10 +1,10 @@
-const isArray = require('../isArray');
-const isNumber = require('../isNumber');
-const isString = require('../isString');
-const toNumber = require('../toNumber');
-const toString = require('../toString');
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import toNumber from 'src/toNumber';
+import toString from 'src/toString';
 
-module.exports = value => {
+export default value => {
   if (isString(value)) {
     return value
       .split('')

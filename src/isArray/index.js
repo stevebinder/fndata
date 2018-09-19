@@ -1,1 +1,1 @@
-module.exports = value => value instanceof Array;
+export default value => value instanceof Array;

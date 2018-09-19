@@ -1,6 +1,6 @@
-const isFunction = require('../isFunction');
+import isFunction from 'src/isFunction';
 
-module.exports = (method, catcher) => {
+export default (method, catcher) => {
   if (!isFunction(method)) {
     return method;
   }

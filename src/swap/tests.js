@@ -1,6 +1,6 @@
-const swap = require('./index');
+import swap from './';
 
-module.exports = {
+export default {
   'swap two letters': [
     'cat',
     () => swap('tac', 2, 0),

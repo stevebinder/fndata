@@ -1,6 +1,6 @@
-const set = require('./index');
+import set from './';
 
-module.exports = {
+export default {
   'do nothing': [
     undefined,
     () => set(),

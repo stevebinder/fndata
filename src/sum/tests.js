@@ -1,6 +1,6 @@
-const sum = require('./index');
+import sum from './';
 
-module.exports = {
+export default {
   'sum up numbers': [
     3,
     () => sum(1, 1, 1),
