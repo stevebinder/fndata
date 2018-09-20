@@ -1,9 +1,14 @@
 const path = require('path');
 
-const TEST = process.env.NODE_ENV === 'test';
+const DEVELOPMENT = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: TEST ? './test/' : './src/',
+  entry: DEVELOPMENT
+    ? [
+      '@babel/polyfill',
+      './test/',
+    ]
+    : './src/',
   module: {
     rules: [
       {
@@ -19,8 +24,12 @@ module.exports = {
     },
   },
   output: {
-    filename: TEST ? 'test.js' : 'reactdux.js',
-    libraryTarget: TEST ? 'var' : 'commonjs2',
+    filename: DEVELOPMENT
+      ? 'test.js'
+      : 'reactdux.js',
+    libraryTarget: DEVELOPMENT
+      ? 'var'
+      : 'commonjs2',
     path: path.resolve(__dirname, 'dist'),
   },
 };

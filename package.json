@@ -11,12 +11,16 @@
     "dist/"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/reactdux.js",
   "name": "fndata",
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && NODE_ENV=production webpack -p",
+    "build": "npm run clean && NODE_ENV=production webpack -p",
+    "clean": "rm -rf dist && mkdir dist",
     "release": "git checkout master && git pull origin master && npm publish",
-    "test": "NODE_ENV=test webpack --mode=development && node dist/test"
+    "test": "npm run clean && NODE_ENV=development webpack --mode=development && node dist/test"
   },
-  "version": "0.10.0"
+  "version": "0.10.0",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
 }

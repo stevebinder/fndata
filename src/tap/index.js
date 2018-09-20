@@ -1,7 +1,7 @@
-const env = `${process.env.NODE_ENV}`.toLowerCase();
+const env = process.env.NODE_ENV || '';
 
 export default value => {
-  if (env !== 'test' && env !== 'production') {
+  if (!/^(test|production)$/i.test(env)) {
     console.log(value);
   }
   return value;
