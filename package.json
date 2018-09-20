@@ -2,6 +2,7 @@
   "description": "Functional methods for manipulating data.",
   "devDependencies": {
     "@babel/core": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.2",
     "webpack": "^4.19.1",
@@ -19,8 +20,5 @@
     "release": "git checkout master && git pull origin master && npm publish",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development && node dist/test"
   },
-  "version": "0.10.0",
-  "dependencies": {
-    "@babel/polyfill": "^7.0.0"
-  }
+  "version": "0.10.0"
 }
