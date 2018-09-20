@@ -20,5 +20,5 @@
     "release": "git checkout master && git pull origin master && npm publish",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development && node dist/test"
   },
-  "version": "0.10.0"
+  "version": "0.10.1"
 }
