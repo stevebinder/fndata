@@ -57,6 +57,7 @@ import { default as swap } from 'src/swap/tests';
 import { default as tap } from 'src/tap/tests';
 import { default as toBoolean } from 'src/toBoolean/tests';
 import { default as toNumber } from 'src/toNumber/tests';
+export { default as toPattern } from 'src/toPattern/tests';
 import { default as toString } from 'src/toString/tests';
 import { default as uppercase } from 'src/uppercase/tests';
 import { default as values } from 'src/values/tests';
