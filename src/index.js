@@ -55,6 +55,7 @@ export { default as split } from 'src/split';
 export { default as sum } from 'src/sum';
 export { default as swap } from 'src/swap';
 export { default as tap } from 'src/tap';
+export { default as test } from 'src/test';
 export { default as toBoolean } from 'src/toBoolean';
 export { default as toNumber } from 'src/toNumber';
 export { default as toPattern } from 'src/toPattern';
