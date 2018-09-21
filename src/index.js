@@ -26,6 +26,7 @@ export { default as isNan } from 'src/isNan';
 export { default as isNumber } from 'src/isNumber';
 export { default as isNull } from 'src/isNull';
 export { default as isObject } from 'src/isObject';
+export { default as isPattern } from 'src/isPattern';
 export { default as isShape } from 'src/isShape';
 export { default as isString } from 'src/isString';
 export { default as isUndefined } from 'src/isUndefined';

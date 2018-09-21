@@ -26,6 +26,7 @@ import { default as isNan } from 'src/isNan/tests';
 import { default as isNumber } from 'src/isNumber/tests';
 import { default as isNull } from 'src/isNull/tests';
 import { default as isObject } from 'src/isObject/tests';
+export { default as isPattern } from 'src/isPattern/tests';
 import { default as isShape } from 'src/isShape/tests';
 import { default as isString } from 'src/isString/tests';
 import { default as isUndefined } from 'src/isUndefined/tests';
