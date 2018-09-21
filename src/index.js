@@ -1,5 +1,6 @@
 export { default as all } from 'src/all';
 export { default as attempt } from 'src/attempt';
+export { default as capitalize } from 'src/capitalize';
 export { default as compose } from 'src/compose';
 export { default as concat } from 'src/concat';
 export { default as copy } from 'src/copy';

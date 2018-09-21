@@ -1,5 +1,6 @@
 import { default as all } from 'src/all/tests';
 import { default as attempt } from 'src/attempt/tests';
+import { default as capitalize } from 'src/capitalize/tests';
 import { default as compose } from 'src/compose/tests';
 import { default as concat } from 'src/concat/tests';
 import { default as copy } from 'src/copy/tests';
