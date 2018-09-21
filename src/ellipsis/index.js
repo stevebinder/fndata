@@ -1,12 +1,13 @@
+import curry from 'src/curry';
 import isString from 'src/isString';
+import slice from 'src/slice';
 import toString from 'src/toString';
 
-export default (value, max = Infinity, characters = '...') => {
-  if (!isString(value)) {
-    return toString(value);
-  }
-  if (value.length <= max) {
-    return value;
-  }
-  return `${value.substring(0, max)}${characters}`;
-};
+export default (value, max = Infinity, characters = '...') => curry(
+  value,
+  toString,
+  [slice, 0, max],
+  sliced => sliced === value
+    ? sliced
+    : `${sliced}${characters}`,
+);

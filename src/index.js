@@ -53,4 +53,5 @@ export { default as tap } from 'src/tap';
 export { default as toBoolean } from 'src/toBoolean';
 export { default as toNumber } from 'src/toNumber';
 export { default as toString } from 'src/toString';
+export { default as uppercase } from 'src/uppercase';
 export { default as values } from 'src/values';

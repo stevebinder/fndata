@@ -1,22 +1,16 @@
 import toString from './';
 
 export default {
-  'should be a non-empty string': [
+  'convert a string': [
     'a',
     () => toString('a'),
   ],
-  'should be an empty string': [
-    '',
-    () => toString(),
-    () => toString(undefined),
-    () => toString(null),
+  'convert a boolean': [
+    'true',
     () => toString(true),
-    () => toString(false),
-    () => toString(NaN),
-    () => toString(Infinity),
-    () => toString({}),
-    () => toString([]),
-    () => toString(() => {}),
-    () => toString(/a/),
+  ],
+  'convert an object': [
+    '{"a":1}',
+    () => toString({ a: 1 }),
   ],
 };

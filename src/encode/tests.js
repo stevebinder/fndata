@@ -13,4 +13,9 @@ export default {
       return encode(obj);
     },
   ],
+  'encode an empty value': [
+    '',
+    () => encode(),
+    () => encode(null),
+  ],
 };
