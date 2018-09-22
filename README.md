@@ -1,6 +1,6 @@
 # FNdata
 
-**Functional methods for manipulating data.**
+**100% functional functions.**
 
 1. ```npm run test``` will run all tests included in the **tests** folder.
 2. ```npm run build```

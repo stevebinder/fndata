@@ -1,5 +1,5 @@
 {
-  "description": "Functional methods for manipulating data.",
+  "description": "100% functional functions.",
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
@@ -10,6 +10,16 @@
   },
   "files": [
     "dist/"
+  ],
+  "keywords": [
+    "100%",
+    "code"
+    "functional",
+    "functions",
+    "methods",
+    "library",
+    "util",
+    "utils"
   ],
   "license": "MIT",
   "main": "dist/reactdux.js",
