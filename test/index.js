@@ -38,6 +38,7 @@ export { default as lowercase } from 'src/lowercase/tests';
 import { default as map } from 'src/map/tests';
 import { default as match } from 'src/match/tests';
 import { default as memoize } from 'src/memoize/tests';
+export { default as merge } from 'src/merge/tests';
 import { default as move } from 'src/move/tests';
 import { default as none } from 'src/none/tests';
 import { default as noop } from 'src/noop/tests';
