@@ -3,6 +3,9 @@ const path = require('path');
 const DEVELOPMENT = process.env.NODE_ENV === 'development';
 
 module.exports = {
+  devtool: DEVELOPMENT
+    ? 'inline-source-map'
+    : '',
   entry: DEVELOPMENT
     ? [
       '@babel/polyfill',
