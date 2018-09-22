@@ -6,6 +6,7 @@ export { default as concat } from 'src/concat';
 export { default as copy } from 'src/copy';
 export { default as curry } from 'src/curry';
 export { default as decode } from 'src/decode';
+export { default as dedupe } from 'src/dedupe';
 export { default as ellipsis } from 'src/ellipsis';
 export { default as encode } from 'src/encode';
 export { default as entries } from 'src/entries';

@@ -32,6 +32,10 @@ export default {
     true,
     () => merge([1, 2], true),
   ],
+  'dedupe combined array': [
+    [1, 2, 3],
+    () => merge([1, 2], [2, 3], true),
+  ],
   'object with an empty value': [
     { a: 1, b: 2 },
     () => merge({ a: 1, b: 2 }),
@@ -40,6 +44,10 @@ export default {
   'object with a non-object': [
     true,
     () => merge({ a: 1, b: 2 }, true),
+  ],
+  'object with completing value merges right': [
+    { a: true, b: true },
+    () => merge({ a: false, b: false }, { a: true, b: true }),
   ],
   'complex merge': [
     {

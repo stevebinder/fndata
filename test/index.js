@@ -6,6 +6,7 @@ import { default as concat } from 'src/concat/tests';
 import { default as copy } from 'src/copy/tests';
 import { default as curry } from 'src/curry/tests';
 import { default as decode } from 'src/decode/tests';
+import { default as dedupe } from 'src/dedupe/tests';
 import { default as ellipsis } from 'src/ellipsis/tests';
 import { default as encode } from 'src/encode/tests';
 import { default as entries } from 'src/entries/tests';
