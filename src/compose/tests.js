@@ -1,7 +1,7 @@
 import compose from './';
 
 export default {
-  'create a method that curries along the given value': [
+  'return a method that curries along the given value': [
     10,
     () => {
       const method = compose(

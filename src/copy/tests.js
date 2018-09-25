@@ -1,50 +1,47 @@
+import isEqual from 'src/isEqual';
 import copy from './';
 
 export default {
-  'copy undefined': [
-    undefined,
-    () => copy(undefined),
-  ],
-  'copy null': [
-    null,
-    () => copy(null),
-  ],
-  'copy a string': [
+  'array': [
     true,
     () => {
-      const str = 'abc';
-      return str === copy(str);
+      const original = [1, 2, 3];
+      const clone = copy(original);
+      return original !== clone && isEqual(original, clone);
     },
   ],
-  'copy a number': [
-    true,
-    () => {
-      const num = 1;
-      return num === copy(num);
-    },
-  ],
-  'copy an array': [
-    false,
-    () => {
-      const ary = [1, 2, 3];
-      return ary === copy(ary);
-    },
-  ],
-  'copy a function': [
-    false,
-    () => {
-      const fn = () => {};
-      return fn === copy(fn);
-    },
-  ],
-  'copy an object': [
+  'object': [
     true,
     () =>  {
-      const original = { a: { b: true } };
-      const duplicate = copy(original);
-      return original.a.b === true
-        && duplicate.a.b === true
-        && original.a !== duplicate.a;
+      const original = { a: { b: 1 }, c: 2 };
+      const clone = copy(original);
+      return original !== clone
+        && original.a !== clone.a
+        && isEqual(original, clone);
+    },
+  ],
+  'undefined, null, boolean, number, or string': [
+    true,
+    () => copy(undefined) === undefined,
+    () => copy(null) === null,
+    () => copy(true) === true,
+    () => copy(1) === 1,
+    () => copy('') === '',
+  ],
+  'function': [
+    true,
+    () => {
+      const original = (a, b) => a + b;
+      const clone = copy(original);
+      return original !== clone && original(1, 2) === clone(1, 2);
+    },
+  ],
+  'error': [
+    true,
+    () => {
+      const original = new Error('ouch');
+      const clone = copy(original);
+      return original !== clone && original.message === clone.message;
     },
   ],
 };

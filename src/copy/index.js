@@ -1,34 +1,39 @@
 import isArray from 'src/isArray';
 import isBoolean from 'src/isBoolean';
 import isEmpty from 'src/isEmpty';
+import isError from 'src/isError';
 import isFunction from 'src/isFunction';
 import isNumber from 'src/isNumber';
 import isObject from 'src/isObject';
 import isString from 'src/isString';
+import loop from 'src/loop';
+import map from 'src/map';
 
-const copy = value => {
+const copy = target => {
+  if (isArray(target)) {
+    return map(target, item => copy(item));
+  }
   if (
-    isEmpty(value)
-    || isBoolean(value)
-    || isNumber(value)
-    || isString(value)
+    isEmpty(target)
+    || isBoolean(target)
+    || isNumber(target)
+    || isString(target)
   ) {
-    return value;
+    return target;
   }
-  if (isFunction(value)) {
-    return (...args) => value(...args);
+  if (isFunction(target)) {
+    return (...args) => target(...args);
   }
-  if (isArray(value)) {
-    return [...value];
+  if (isError(target)) {
+    return new Error(target.message);
   }
-  try {
-    const dup = { ...value };
-    for (const key in dup) {
-      dup[key] = copy(dup[key]);
-    }
-    return dup;
-  } catch (e) {
-    return undefined;
+  if (isObject(target)) {
+    const clone = { ...target };
+    loop(
+      clone,
+      ({ key, value }) => clone[key] = copy(value),
+    );
+    return clone;
   }
 }
 

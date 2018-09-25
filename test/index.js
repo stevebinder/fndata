@@ -164,7 +164,7 @@ const tests = {
   if (errors.length) {
     const errorTitle = `FAIL ${errors.length} of ${total} tests.`;
     const errorLines = errors.map(({ body, description, index, name }) =>
-      `FAIL(${name}): ${description} ${body && ' '}${body}`);
+      `FAIL(${name})[${description}] ${body && ' '}${body}`);
     const errorMessage = [errorTitle]
       .concat(errorLines)
       .join('\n    ');
