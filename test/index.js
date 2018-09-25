@@ -22,6 +22,7 @@ import { default as isBoolean } from 'src/isBoolean/tests';
 import { default as isElement } from 'src/isElement/tests';
 import { default as isEmpty } from 'src/isEmpty/tests';
 import { default as isEqual } from 'src/isEqual/tests';
+import { default as isError } from 'src/isError/tests';
 import { default as isFunction } from 'src/isFunction/tests';
 import { default as isInfinity } from 'src/isInfinity/tests';
 import { default as isNan } from 'src/isNan/tests';

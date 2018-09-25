@@ -1,24 +1,36 @@
+import isError from 'src/isError';
 import attempt from './';
 
 export default {
   'return the value if the supplied method is not a function': [
-    'ok',
-    () => attempt('ok'),
+    1,
+    () => attempt(1),
   ],
-  'return the method return value on success': [
-    'ok',
-    () => attempt(() => 'ok'),
+  'return the method result on success': [
+    1,
+    () => attempt(() => 1),
   ],
-  'return the catch method return value on error': [
-    'ok',
-    () => attempt(() => a(), () => 'ok'),
+  'return the catch value on error': [
+    1,
+    () => attempt(() => a(), 1),
+  ],
+  'return the catch method result on error': [
+    1,
+    () => attempt(() => a(), () => 1),
+  ],
+  'pass any error to the catch method': [
+    true,
+    () => attempt(() => a(), error => isError(error)),
   ],
   'run a function with an error silently': [
-    undefined,
-    () => attempt(() => a()),
-  ],
-  'return default value on error': [
-    'ok',
-    () => attempt(() => a(), 'ok'),
+    1,
+    () => {
+      try {
+        attempt(() => a());
+        return 1;
+      } catch (error) {
+        return 2;
+      }
+    },
   ],
 };

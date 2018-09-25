@@ -22,6 +22,7 @@ export { default as isBoolean } from 'src/isBoolean';
 export { default as isElement } from 'src/isElement';
 export { default as isEmpty } from 'src/isEmpty';
 export { default as isEqual } from 'src/isEqual';
+export { default as isError } from 'src/isError';
 export { default as isFunction } from 'src/isFunction';
 export { default as isInfinity } from 'src/isInfinity';
 export { default as isNan } from 'src/isNan';

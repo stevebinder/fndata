@@ -6,11 +6,9 @@ export default (method, catcher) => {
   }
   try {
     return method();
-  } catch(e) {
-    if (isFunction(catcher)) {
-      return catcher(e);
-    } else {
-      return catcher;
-    }
+  } catch(error) {
+    return isFunction(catcher)
+      ? catcher(error)
+      : catcher;
   }
 };
