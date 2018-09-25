@@ -1,12 +1,8 @@
 import capitalize from './';
 
 export default {
-  'capitalize the word': [
-    'Hello',
+  'capitalize the first letter only': [
+    'HellO',
     () => capitalize('hellO'),
-  ],
-  'capitalize each word': [
-    'Hello World',
-    () => capitalize('hellO woRld'),
   ],
 }

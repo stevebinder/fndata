@@ -77,5 +77,3 @@ const mergeObject = (a, b, dedupeArrays) => reduce(
 );
 
 export default merge;
-
-console.log(merge({ a: 1 }, { b: 2 }))
