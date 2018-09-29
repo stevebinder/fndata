@@ -23,13 +23,13 @@ export default value => {
       value,
       toString,
       split,
-      reduce(
-        value,
+      [
+        reduce,
         [],
         (result, item) => includes(result, item)
           ? result
           : [...result, item ],
-      ),
+      ],
       join,
     );
   }
