@@ -1,6 +1,5 @@
-export default () => {
-  const s4 = () => Math.floor((1 + Math.random()) * 0x10000)
-    .toString(16)
-    .substring(1);
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-};
+const seg = () =>
+  Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+
+export default () =>
+  `${seg()}${seg()}-${seg()}-${seg()}-${seg()}-${seg()}${seg()}${seg()}`;
