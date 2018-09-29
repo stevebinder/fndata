@@ -65,5 +65,6 @@ export { default as toBoolean } from 'src/toBoolean/tests';
 export { default as toNumber } from 'src/toNumber/tests';
 export { default as toPattern } from 'src/toPattern/tests';
 export { default as toString } from 'src/toString/tests';
+export { default as trim } from 'src/trim/tests';
 export { default as uppercase } from 'src/uppercase/tests';
 export { default as values } from 'src/values/tests';
