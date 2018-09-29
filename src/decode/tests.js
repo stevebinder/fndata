@@ -1,12 +1,16 @@
 import decode from './';
 
 export default {
-  'decode a valid value': [
+  'valid value': [
     [1, 2, 3],
     () => decode('[1,2,3]'),
   ],
-  'decode an invalid value': [
+  'invalid value': [
     undefined,
     () => decode('[1x,2,3]'),
+  ],
+  'null': [
+    undefined,
+    () => decode(null),
   ],
 };
