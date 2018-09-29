@@ -1,7 +1,7 @@
 import isArray from 'src/isArray';
 import isFunction from 'src/isFunction';
 
-export default (...args) => {
+export default function all(...args) {
   if (args.length === 2) {
     const [value, method] = args;
     if(
@@ -12,4 +12,4 @@ export default (...args) => {
     }
   }
   return args.every(item => item);
-};
+}

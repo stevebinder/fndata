@@ -1,14 +1,24 @@
 import isFunction from 'src/isFunction';
 
-export default (method, catcher) => {
+export default function attempt(method, ...catchers) {
   if (!isFunction(method)) {
     return method;
   }
   try {
     return method();
   } catch(error) {
-    return isFunction(catcher)
-      ? catcher(error)
-      : catcher;
+    if (!catchers.length) {
+      return;
+    }
+    for (let index = 0; index < catchers.length; index += 1) {
+      const catcher = catchers[index];
+      if (!isFunction(catcher)) {
+        return catcher;
+      }
+      try {
+        return catcher(error);
+      } catch(error2) {}
+    }
+    throw error;
   }
-};
+}

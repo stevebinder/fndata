@@ -13,12 +13,9 @@ export default {
     true,
     () => all([0, 1, 2], (item, index, target) => target.length === 3),
   ],
-  'check the truthiness of each value': [
+  'all values are truthy': [
     true,
     () => all(1, true, {}, [], 'a'),
-  ],
-  'check the falsiness of each value': [
-    false,
-    () => all(true, 'a', false),
+    () => !all(true, 'a', false),
   ],
 };
