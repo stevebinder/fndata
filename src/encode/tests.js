@@ -1,11 +1,27 @@
 import encode from './';
 
 export default {
-  'encode a valid value': [
+  'should encode a string': [
+    '"ok"',
+    () => encode('ok'),
+  ],
+  'should encode a number': [
+    '1',
+    () => encode(1),
+  ],
+  'should encode a boolean': [
+    'true',
+    () => encode(true),
+  ],
+  'should encode an array': [
     '[1,2,3]',
     () => encode([1, 2, 3]),
   ],
-  'encode an invalid value': [
+  'should encode an object': [
+    '{"a":"ok"}',
+    () => encode({ a: 'ok' }),
+  ],
+  'should return an empty string on error': [
     '',
     () => {
       const obj = {};
@@ -13,7 +29,7 @@ export default {
       return encode(obj);
     },
   ],
-  'encode an empty value': [
+  'should return an empty string if null or undefined': [
     '',
     () => encode(),
     () => encode(null),
