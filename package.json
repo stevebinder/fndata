@@ -25,10 +25,10 @@
   "main": "dist/reactdux.js",
   "name": "fndata",
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production webpack -p",
+    "build": "npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'Build Successful!'",
     "clean": "rm -rf dist && mkdir dist",
-    "release": "git checkout master && git pull origin master && npm publish",
-    "test": "npm run clean && NODE_ENV=development webpack --mode=development && node dist/test"
+    "release": "git checkout master && git pull origin master && npm publish && echo 'Publish Successful!'",
+    "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=none && node dist/test && echo 'Tests Passed!'"
   },
   "version": "0.11.0"
 }

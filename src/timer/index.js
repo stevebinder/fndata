@@ -11,7 +11,7 @@ export default (callback = noop, delay = 0, loops = 0) => {
     if (count === total) {
       clearInterval(id);
     }
-    callback(count - 1);
+    callback(count);
   }, delay);
   return () => {
     clearInterval(id);

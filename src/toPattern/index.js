@@ -2,8 +2,8 @@ import isPattern from 'src/isPattern';
 import toString from 'src/toString';
 
 export default value => {
-  if (isPattern(pattern)) {
-    return pattern;
+  if (isPattern(value)) {
+    return value;
   }
-  return new RegExp(toString(pattern));
+  return new RegExp(toString(value));
 };

@@ -1,9 +1,12 @@
 import curry from 'src/curry';
 import includes from 'src/includes';
+import isArray from 'src/isArray';
+import isNumber from 'src/isNumber';
+import isString from 'src/isString';
+import join from 'src/join';
 import reduce from 'src/reduce';
 import split from 'src/split';
 import toString from 'src/toString';
-
 
 export default value => {
   if (isArray(value)) {
