@@ -29,7 +29,7 @@ module.exports = {
   output: {
     filename: DEVELOPMENT
       ? 'test.js'
-      : 'reactdux.js',
+      : 'fndata.js',
     libraryTarget: DEVELOPMENT
       ? 'var'
       : 'commonjs2',
