@@ -6,5 +6,6 @@ export default (value, pattern) => {
   if (isEmpty(value) || isEmpty(pattern)) {
     return false;
   }
-  return toPattern(pattern).test(toString(value));
+  return toPattern(pattern)
+    .test(toString(value));
 };

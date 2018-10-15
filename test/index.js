@@ -41,3 +41,4 @@ if (errors.length) {
     .join('\n    ');
   throw new Error(errorMessage);
 }
+exit;

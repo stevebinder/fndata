@@ -48,6 +48,7 @@ export { default as prefill } from 'src/prefill/tests';
 export { default as range } from 'src/range/tests';
 export { default as reduce } from 'src/reduce/tests';
 export { default as reject } from 'src/reject/tests';
+export { default as replace } from 'src/replace/tests';
 export { default as reverse } from 'src/reverse/tests';
 export { default as round } from 'src/round/tests';
 export { default as roundDown } from 'src/roundDown/tests';
