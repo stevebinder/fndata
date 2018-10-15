@@ -30,5 +30,5 @@
     "release": "git checkout master && git pull origin master && npm run clean && npm run build && npm publish && echo 'Publish Successful!'",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=none && node dist/test && echo 'Tests Passed!'"
   },
-  "version": "0.13.0"
+  "version": "0.14.0"
 }

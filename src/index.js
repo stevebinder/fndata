@@ -35,6 +35,7 @@ export { default as isString } from 'src/isString';
 export { default as isUndefined } from 'src/isUndefined';
 export { default as join } from 'src/join';
 export { default as keys } from 'src/keys';
+export { default as length } from 'src/length';
 export { default as loop } from 'src/loop';
 export { default as lowercase } from 'src/lowercase';
 export { default as map } from 'src/map';
