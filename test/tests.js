@@ -46,6 +46,7 @@ export { default as move } from 'src/move/tests';
 export { default as none } from 'src/none/tests';
 export { default as noop } from 'src/noop/tests';
 export { default as prefill } from 'src/prefill/tests';
+export { default as promise } from 'src/promise/tests';
 export { default as range } from 'src/range/tests';
 export { default as reduce } from 'src/reduce/tests';
 export { default as reject } from 'src/reject/tests';
