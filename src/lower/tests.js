@@ -1,12 +1,12 @@
-import lowercase from './';
+import lower from './';
 
 export default {
   'lowercase a string': [
     'a',
-    () => lowercase('A'),
+    () => lower('A'),
   ],
   'lowercase a non-string': [
     '{"a":"ok"}',
-    () => lowercase({ a: 'OK' }),
+    () => lower({ a: 'OK' }),
   ],
 }

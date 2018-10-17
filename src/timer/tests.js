@@ -14,7 +14,9 @@ export default {
     true,
     () => {
       const obj = timer();
-      return !!obj.cancel && !!obj.restart && !!obj.reset;
+      return isFunction(obj.cancel)
+        && isFunction(obj.restart)
+        && isFunction(obj.reset)
     },
   ],
 };

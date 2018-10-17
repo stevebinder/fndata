@@ -11,11 +11,9 @@ export default {
     () => {
       const obj = promise();
       return isFunction(obj.cancel)
-        && isFunction(obj.catch);
-        && isFunction(obj.finally);
-        && isFunction(obj.then);
-        && isFunction(obj.resolve)
-        && isFunction(obj.reject)
+        && isFunction(obj.catch)
+        && isFunction(obj.finally)
+        && isFunction(obj.then)
         && obj.fulfilled === false
         && obj.hasOwnProperty('result');
     },

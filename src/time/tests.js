@@ -1,4 +1,4 @@
-import time from './time';
+import time from './';
 
 export default {
   'should return now': [

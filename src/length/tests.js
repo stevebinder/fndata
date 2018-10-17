@@ -10,7 +10,7 @@ export default {
   'should equal the object length if it is a number': [
     1,
     () => length([true]),
-    ()= > length({ length: 1 }),
+    () => length({ length: 1 }),
   ],
   'should equal the number of entries in the object': [
     2,

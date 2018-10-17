@@ -7,6 +7,8 @@ export default (callback = noop) => {
   const obj = () => {
     obj.fulfilled = true;
   };
+  obj.fulfilled = false;
+  obj.result = undefined;
   const runList = targetList => [...targetList, ...finallyList]
     .forEach(item => obj.result = item(...args));
   obj.resolve = value => {
@@ -25,7 +27,7 @@ export default (callback = noop) => {
     obj.result = value;
     runList(thenList);
   };
-  setTimeout(() => callback(obj.resolve, obj.reject));
+  setTimeout(() => !obj.fulfilled && callback(obj.resolve, obj.reject));
   obj.cancel = obj;
   obj.catch = callback => catchList.push(callback);
   obj.finally = callback => finallyList.push(callback);

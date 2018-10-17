@@ -25,10 +25,10 @@
   "main": "dist/fndata.js",
   "name": "fndata",
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'Build Successful!'",
+    "build": "npm run test && npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'Build Successful!'",
     "clean": "rm -rf dist && mkdir dist",
     "release": "git checkout master && git pull origin master && npm run clean && npm run build && npm publish && echo 'Publish Successful!'",
-    "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=none && node dist/test && echo 'Tests Passed!'"
+    "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=errors-only && node dist/test && echo 'Tests Passed!'"
   },
-  "version": "0.15.0"
+  "version": "0.16.0"
 }
