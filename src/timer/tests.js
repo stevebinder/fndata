@@ -10,4 +10,11 @@ export default {
     null,
     () => timer()(),
   ],
+  'should return function methods': [
+    true,
+    () => {
+      const obj = timer();
+      return !!obj.cancel && !!obj.restart && !!obj.reset;
+    },
+  ],
 };
