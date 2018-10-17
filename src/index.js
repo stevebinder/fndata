@@ -63,6 +63,7 @@ export { default as sum } from 'src/sum';
 export { default as swap } from 'src/swap';
 export { default as tap } from 'src/tap';
 export { default as test } from 'src/test';
+export { default as time } from 'src/time';
 export { default as timer } from 'src/timer';
 export { default as toBoolean } from 'src/toBoolean';
 export { default as toNumber } from 'src/toNumber';
