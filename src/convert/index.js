@@ -7,7 +7,7 @@ const matches = (value, matcher) => {
   return comparer(value);
 };
 
-export default (value, ...converters) => {
+export default (value, converters = [], defaultValue = undefined) => {
   for (let i = 0; i < converters.length; i += 1) {
     const [matcher, converter] = converters[i];
     if (matches(value, matcher)) {
@@ -17,5 +17,8 @@ export default (value, ...converters) => {
       return converter;
     }
   }
-  return value;
+  if (isFunction(defaultValue)) {
+    return defaultValue(value);
+  }
+  return defaultValue;
 };

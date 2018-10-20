@@ -72,5 +72,7 @@ export { default as toNumber } from 'src/toNumber/tests';
 export { default as toPattern } from 'src/toPattern/tests';
 export { default as toString } from 'src/toString/tests';
 export { default as trim } from 'src/trim/tests';
+export { default as trimEnd } from 'src/trimEnd/tests';
+export { default as trimStart } from 'src/trimStart/tests';
 export { default as upper } from 'src/upper/tests';
 export { default as values } from 'src/values/tests';

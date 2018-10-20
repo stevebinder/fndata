@@ -6,8 +6,20 @@ export default {
     true,
     () => isString(trim()),
   ],
-  'trim all tabs, newlines, and whitespace from beginning and end': [
+  'trim leading and trailing spaces': [
     'hello world',
-    () => trim(' \r\n  \r\thello world  \r\n\t\r  '),
+    () => trim('    hello world    '),
+  ],
+  'trim all tabs': [
+    'hello world',
+    () => trim('\t\thello\t world\t'),
+  ],
+  'trim all double spaces in the middle': [
+    'hello to the world',
+    () => trim('hello  to  the    world'),
+  ],
+  'trim all triple carriage returns': [
+    'hello \n\nworld',
+    () => trim('hello \n\n\nworld'),
   ],
 };
