@@ -5,4 +5,8 @@ export default {
     'hello world  \n ',
     () => trimStart('    hello world  \n '),
   ],
+  'trim if only whitespace': [
+    '',
+    () => trimStart('   \n\t     '),
+  ],
 };
