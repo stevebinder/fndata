@@ -1,12 +1,16 @@
 import trimEnd from './';
 
 export default {
-  'do not trim leading whitespace': [
-    '  \n  hello world',
-    () => trimEnd('  \n  hello world   '),
-  ],
-  'trim if only whitespace': [
+  'trim everything if only whitespace is provided': [
     '',
     () => trimEnd('   \n\t     '),
+  ],
+  'trim leading newlines to minimum': [
+    '\n\nhello world',
+    () => trimEnd('\n\n\nhello world    '),
+  ],
+  'trim trailing spaces to minimum': [
+    ' hello world',
+    () => trimEnd('      hello world    '),
   ],
 };
