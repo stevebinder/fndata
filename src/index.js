@@ -72,4 +72,5 @@ export { default as toPattern } from 'src/toPattern';
 export { default as toString } from 'src/toString';
 export { default as trim } from 'src/trim';
 export { default as upper } from 'src/upper';
+export { default as uuid } from 'src/id'; // ALIAS
 export { default as values } from 'src/values';
