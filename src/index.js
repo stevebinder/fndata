@@ -48,6 +48,7 @@ export { default as memo } from 'src/memo';
 export { default as move } from 'src/move';
 export { default as none } from 'src/none';
 export { default as noop } from 'src/noop';
+export { default as pipe } from 'src/compose';
 export { default as prefill } from 'src/prefill';
 // export { default as promise } from 'src/promise';
 export { default as range } from 'src/range';
