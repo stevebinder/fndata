@@ -3,6 +3,7 @@ export { default as attempt } from 'src/attempt/tests';
 export { default as capitalize } from 'src/capitalize/tests';
 export { default as compose } from 'src/compose/tests';
 export { default as concat } from 'src/concat/tests';
+export { default as convert } from 'src/convert/tests';
 export { default as copy } from 'src/copy/tests';
 export { default as curry } from 'src/curry/tests';
 export { default as decode } from 'src/decode/tests';
