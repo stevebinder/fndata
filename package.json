@@ -27,7 +27,7 @@
   "scripts": {
     "build": "npm run test && npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'Build Successful!'",
     "clean": "rm -rf dist && mkdir dist",
-    "release": "git checkout master && git pull origin master && npm run clean && npm run build && npm publish && echo 'Publish Successful!'",
+    "release": "git checkout master && git pull origin master && git push origin master && npm run clean && npm run build && npm publish && echo 'Publish Successful!'",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=errors-only && node dist/test && echo 'Tests Passed!'"
   },
   "version": "0.23.0"
