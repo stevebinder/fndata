@@ -46,6 +46,7 @@ export { default as lower } from 'src/lower';
 export { default as map } from 'src/map';
 export { default as match } from 'src/match';
 export { default as memo } from 'src/memo';
+export { default as memoize } from 'src/memo';
 //export { default as merge } from 'src/merge';
 export { default as move } from 'src/move';
 export { default as none } from 'src/none';
