@@ -1,12 +1,8 @@
 import noop from './';
 
 export default {
-  'should return undefined': [
-    undefined,
-    () => noop(),
-  ],
-  'should be equal': [
-    true,
-    () => noop === noop,
+  'return the first argument': [
+    1,
+    () => noop(1),
   ],
 };
