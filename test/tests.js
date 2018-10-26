@@ -1,4 +1,5 @@
 export { default as all } from 'src/all/tests';
+export { default as append } from 'src/append/tests';
 export { default as attempt } from 'src/attempt/tests';
 export { default as capitalize } from 'src/capitalize/tests';
 export { default as compose } from 'src/compose/tests';
@@ -50,6 +51,7 @@ export { default as move } from 'src/move/tests';
 export { default as none } from 'src/none/tests';
 export { default as noop } from 'src/noop/tests';
 export { default as prefill } from 'src/prefill/tests';
+export { default as prepend } from 'src/prepend/tests';
 export { default as promise } from 'src/promise/tests';
 export { default as range } from 'src/range/tests';
 export { default as reduce } from 'src/reduce/tests';

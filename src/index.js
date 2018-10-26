@@ -1,4 +1,5 @@
 export { default as all } from 'src/all';
+export { default as append } from 'src/append';
 export { default as attempt } from 'src/attempt';
 export { default as capitalize } from 'src/capitalize';
 export { default as choose } from 'src/convert';
@@ -56,6 +57,7 @@ export { default as none } from 'src/none';
 export { default as noop } from 'src/noop';
 export { default as pipe } from 'src/compose';
 export { default as prefill } from 'src/prefill';
+export { default as prepend } from 'src/prepend';
 // export { default as promise } from 'src/promise';
 export { default as range } from 'src/range';
 export { default as reduce } from 'src/reduce';
