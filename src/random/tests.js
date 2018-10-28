@@ -25,12 +25,12 @@ export default {
       return true;
     },
   ],
-  'return a random key from an object': [
+  'return a random value from an object': [
     true,
     () => {
       const obj = { a: 1, b: 2, c: 3 };
       const value = random(obj);
-      return value === 'a' || value === 'b' || value === 'c';
+      return value === 1 || value === 2 || value === 3;
     },
   ],
   'return a random letter from a string': [

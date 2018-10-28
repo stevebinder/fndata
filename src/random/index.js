@@ -4,8 +4,8 @@ import isEmpty from 'src/isEmpty';
 import isNumber from 'src/isNumber';
 import isObject from 'src/isObject';
 import isString from 'src/isString';
-import keys from 'src/keys';
 import split from 'src/split';
+import values from 'src/values';
 import toNumber from 'src/toNumber';
 import toString from 'src/toString';
 
@@ -21,7 +21,7 @@ export default value => {
   if (isObject(value)) {
     return curry(
       value,
-      keys,
+      values,
       rand,
     );
   }
