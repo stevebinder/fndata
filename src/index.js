@@ -59,6 +59,7 @@ export { default as pipe } from 'src/compose';
 export { default as prefill } from 'src/prefill';
 export { default as prepend } from 'src/prepend';
 // export { default as promise } from 'src/promise';
+export { default as random } from 'src/random';
 export { default as range } from 'src/range';
 export { default as reduce } from 'src/reduce';
 export { default as reject } from 'src/reject';
