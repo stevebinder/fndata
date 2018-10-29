@@ -2,6 +2,7 @@ export { default as all } from 'src/all/tests';
 export { default as append } from 'src/append/tests';
 export { default as attempt } from 'src/attempt/tests';
 export { default as capitalize } from 'src/capitalize/tests';
+export { default as choose } from 'src/choose/tests';
 export { default as compose } from 'src/compose/tests';
 export { default as concat } from 'src/concat/tests';
 export { default as convert } from 'src/convert/tests';
