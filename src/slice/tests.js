@@ -9,6 +9,18 @@ export default {
     'bc',
     () => slice('abc', 1, 3),
   ],
+  'slice with no end': [
+    'bc',
+    () => slice('abc', 1),
+  ],
+  'slice a string with bad start': [
+    'a',
+    () => slice('abc', -1, 1),
+  ],
+  'slice a string with bad end': [
+    '',
+    () => slice('abc', 0, -1),
+  ],
   'slice a number': [
     234,
     () => slice(1234, 1, 4),

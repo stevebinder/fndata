@@ -3,7 +3,7 @@ import isString from 'src/isString';
 import slice from 'src/slice';
 import toString from 'src/toString';
 
-export default (value, max = Infinity, characters = '...') => curry(
+export default (value, max, characters = '...') => curry(
   value,
   toString,
   [slice, 0, max],
