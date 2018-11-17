@@ -6,10 +6,9 @@ import isNumber from 'src/isNumber';
 import isObject from 'src/isObject';
 import isShape from 'src/isShape';
 import isString from 'src/isString';
-import isUndefined from 'src/isUndefined';
 import reduce from 'src/reduce';
 import set from 'src/set';
-import toString from 'src/toString';
+import split from 'src/split';
 
 const createArrayFilter = filterer => item => filterer.some(value =>
   isObject(value)
@@ -18,9 +17,6 @@ const createArrayFilter = filterer => item => filterer.some(value =>
 
 export default (target, filterer) => {
   const method = (() => {
-    if (isUndefined(filterer)) {
-      return item => isUndefined(item);
-    }
     if (isFunction(filterer)) {
       return filterer;
     }
@@ -36,8 +32,11 @@ export default (target, filterer) => {
     return target.split('').filter(method);
   }
   if (isNumber(target)) {
-    return toString(target).split('').filter((item, ...args) =>
-      method(toNumber(item), ...args));
+    return curry(
+      target,
+      split,
+      value => value.filter(method),
+    );
   }
   if (isArray(target)) {
     return target.filter(method);

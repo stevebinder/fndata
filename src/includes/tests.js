@@ -10,10 +10,8 @@ export default {
     true,
     () => includes('cat', 'a'),
     () => includes('cat', 'at'),
-    () => includes('123', '1'),
     () => includes(123, 1),
-    () => includes(123, '1'),
-    () => includes('123', 1),
+    () => includes(123, 12),
   ],
   'object contains undefined key': [
     false,

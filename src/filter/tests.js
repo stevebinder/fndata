@@ -72,4 +72,12 @@ export default {
     { a: 1, c: 3 },
     () => filter({ a: 1, b: 2, c: 3 }, ({ value }) => value !== 2),
   ],
+  'filter a string': [
+    ['c'],
+    () => filter('cat', 'c'),
+  ],
+  'filter a number': [
+    [1, 1],
+    () => filter(121, 1),
+  ],
 };
