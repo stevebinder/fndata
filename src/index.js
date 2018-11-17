@@ -5,6 +5,7 @@ export { default as capitalize } from 'src/capitalize';
 export { default as choose } from 'src/choose';
 export { default as compose } from 'src/compose';
 export { default as concat } from 'src/concat';
+export { default as contains } from 'src/includes';
 export { default as convert } from 'src/convert';
 export { default as copy } from 'src/copy';
 export { default as curry } from 'src/curry';
