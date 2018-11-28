@@ -1,4 +1,5 @@
 {
+  "author": "Box 9 Studios <email@box9studios.com>",
   "description": "100% functional functions.",
   "devDependencies": {
     "@babel/core": "latest",
@@ -9,26 +10,26 @@
     "webpack-cli": "latest"
   },
   "files": [
-    "dist/"
+    "dist"
   ],
   "keywords": [
-    "100%",
-    "code",
     "functional",
-    "functions",
-    "methods",
     "library",
-    "util",
-    "utils"
+    "lodash",
+    "ramda"
   ],
   "license": "MIT",
   "main": "dist/fndata.js",
   "name": "fndata",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/box9studios/fndata"
+  },
   "scripts": {
     "build": "npm run test && npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'BUILT!'",
     "clean": "rm -rf dist && mkdir dist",
     "release": "git checkout master && git pull origin master && git push origin master && npm run clean && npm run build && npm publish && echo 'PUBLISHED!'",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=errors-only && node dist/test && echo 'PASSED!'"
   },
-  "version": "0.29.1"
+  "version": "1.0.0"
 }

@@ -1,7 +1,5 @@
 # FNdata
 
-**100% functional functions.**
+100% functional functions.
 
-1. ```npm run test``` will run all tests included in the **tests** folder.
-2. ```npm run build```
-3. ```npm run release```
+```npm install fndata```
