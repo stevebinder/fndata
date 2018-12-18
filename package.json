@@ -1,5 +1,5 @@
 {
-  "author": "Box 9 Studios <email@box9studios.com>",
+  "author": "Steve Binder <email@stevebinder.com>",
   "description": "100% functional functions.",
   "devDependencies": {
     "@babel/core": "latest",
@@ -31,5 +31,5 @@
     "release": "git checkout master && git pull origin master && git push origin master && npm run clean && npm run build && npm publish && echo 'PUBLISHED!'",
     "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=errors-only && node dist/test && echo 'PASSED!'"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
