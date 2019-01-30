@@ -2,34 +2,24 @@
   "author": "Steve Binder <email@stevebinder.com>",
   "description": "100% functional functions.",
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/polyfill": "latest",
-    "@babel/preset-env": "latest",
-    "babel-loader": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest"
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "esm": "^3.1.4"
   },
-  "files": [
-    "dist"
-  ],
   "keywords": [
     "functional",
-    "library",
-    "lodash",
-    "ramda"
+    "functions",
+    "library"
   ],
   "license": "MIT",
-  "main": "dist/fndata.js",
+  "main": "./_index",
   "name": "fndata",
   "repository": {
     "type": "git",
-    "url": "https://github.com/box9studios/fndata"
+    "url": "https://github.com/stevebinder/fndata"
   },
   "scripts": {
-    "build": "npm run test && npm run clean && NODE_ENV=production webpack --mode=production --display=none && echo 'BUILT!'",
-    "clean": "rm -rf dist && mkdir dist",
-    "release": "git checkout master && git pull origin master && git push origin master && npm run clean && npm run build && npm publish && echo 'PUBLISHED!'",
-    "test": "npm run clean && NODE_ENV=development webpack --mode=development --display=errors-only && node dist/test && echo 'PASSED!'"
+    "test": "node -r esm _test.js && echo 'PASSED!'"
   },
-  "version": "1.0.1"
+  "version": "1.1.0"
 }
