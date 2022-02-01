@@ -16,7 +16,10 @@ const isEqual = (a, b) => {
     return isNan(b);
   }
   if (isArray(a) || isObject(a)) {
-    if (a.length !== b.length) {
+    if (
+      a.length !== b.length
+      || Object.keys(a).length !== Object.keys(b).length
+    ) {
       return false;
     }
     for (const key in a) {

@@ -34,5 +34,9 @@ export default {
     () => isEqual({ a: 1 }, { b: 1 }),
     () => isEqual({ a: { b: 1 } }, { a: { b: 2 } }),
     () => isEqual({ a: { b: 1 } }, { a: { c: 1 } }),
+    () => isEqual({}, { a: 1 }),
+    () => isEqual([1], { a: 1 }),
+    () => isEqual(null, {}),
+    () => isEqual(null, []),
   ],
 };
